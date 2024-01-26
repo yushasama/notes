@@ -1,0 +1,70 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{10.1 3-Dimensional Coordinate Systems}
+
+\begin{document}
+  \maketitle
+  \textbf{Introduction}\\
+  In 2d, we are able to move along two axises.
+  \[
+    \mathbb{R}^2=\{~(x,y)~|~x,y \in \mathbb{R}\}
+  \]
+
+  While in 3D, we can move along three axises.
+  \[
+    \mathbb{R}^3=\{~(x,y, \zstroke)~|~x,y, \zstroke \in \mathbb{R}\}
+  \]
+
+  The 3 planes divide space into 8 parts called octants. In $\mathbb{R}^2$, the graph of an equation in $ x ~\&~y $  is a curve. While in $\mathbb{R}^3$, the equation of an equation in $ x,y ~ \&~ \zstroke$  is a surface. 
+
+  \textbf{Distance Formula in 3 Dimensions}
+  \[
+    |P_1, P_2| = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2 + (z_2-z_1)^2}
+  \]
+
+  \begin{center}
+  Distance between Points $P_1 ~ (x_1,y_1,z_1)$ \& $P_2(x_2,y_2,z_2)$
+  \end{center}
+
+  \textbf{Ex 2}\\
+  Calculate the distance between the points P(2,-1,3) and Q(1,-3,5)
+  \[
+    (x_1,y_1,z_1)=(2,-1,3)
+  \]
+  \[
+    (x_2,y_2,z_2)=(1,-3,5)
+  \]
+  \[
+    |P~Q| = \sqrt{(1-2)^2+(-3-(-1))^2 + (5-3)^2}\to 3
+  \]
+
+  \textbf{Equation of a Sphere}\\
+  An equation of a sphere with center C (h,k,e) and radius r is $(x-h)^2 + (y-k)^2 + (z-e)^2 = r^2$
+
+  \textbf{Ex 3}\\
+  Show that $x^2+y^2+z^2+4x-6y+2z+6=0$ is the equation of a sphere and find its center and radius
+
+  \[
+    (x^2+4x)+(y^2-6y)+(z^2+2z)=-6
+  \]
+
+  \begin{center}
+    Completing the square
+  \end{center}
+  \[
+    (\frac{4}{2})^2=4, (\frac{-6}{2})^2=9, (\frac{2}{2})^2=1
+  \]
+
+  \[
+    (x^2+4x+4)+(y^2-6y+9)+(z^2+2z+1)=-6+4+9+1
+  \]
+  
+  \[
+    (x+2)^2 + (y-3)^2 + (z+1)^2=8
+  \]
+  
+  \textbf{Ex 4}\\
+  What region is $ \mathcal{R} $ represented by the following inequalities?\\
+  $ 1 \le a^2 + y^2 + z^2 \le 4,~ \zstroke \le0 $\\
+  Region that lies between (or on) the spheres $x^2+y^2+z^2=1$ and $x^2+y^2+z^2=4$ and beneath (or on) the xy plane
+\end{document}

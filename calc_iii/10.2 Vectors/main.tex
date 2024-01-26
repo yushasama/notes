@@ -1,0 +1,107 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{10.2 Vectors}
+
+\begin{document}
+  \maketitle
+  \textbf{Definition}\\
+  A vector is a quantity that has both maginitudes and direction. Magnitude is the length of a vector, while direction is the "arrow tip" of a vector.
+
+  \textbf{Equivalent Vectors}\\
+  For two vectors to be considered equivalent, they must have the same length and direction, $ \vec{ v } = \vec{ v } $.
+
+  \textbf{Zero Vector} \\
+  A vector with a length of $0$ and no specific direction, $ \vec{ 0 }  $.  
+
+  \textbf{Vector Addition}\\
+  The addition of the two vectors, $ \vec{ AB } + \vec{BC} $ can be represented by a vector $ \vec{ AC } $.
+
+  \textbf{Triangle Law}\\
+  Two vectors ($ \vec{ u }, \vec{ v } $) where it creates the initial point of a vector is at the endpoint of other vector. The addition of these two vectors, $ \vec{ u } + \vec{ v } $ can be represented as a straight line connected from the initial point of the feeding vector to the endpoint of the nonfeeding vector.
+
+  \textbf{Parallelogram Law}\\
+  Imagine two vectors, ( $ \vec{ u }, \vec{ v } $ ) connected by the same initial point, creating some sort of triangle. Parallelogram law is where the triangle is copied and mirrored across in a way to create a parallelogram. The sum of these two vectors can be represented as a diagonal line cutting through the parallelogram.
+
+  \textbf{Scalar Multiplication}\\
+  A vector can be scaled by a quantity. For example, a scalar multiplication of 2, increases the vector's size by 2x. While a scalar multiplicaiton of -1 reverses the direction of the vector.
+
+  \textbf{Vector Subtraction}\\
+  If $\vec{u}$ and $ \vec{ v } $ are vectors, then $ \vec{ u } - \vec{ v } = \vec{ u } + ( \vec{ -v }  )$ This can be represented by drawing $ \vec{ -v } $, which is mirroring $ \vec{ v } $ in the opposite direction. Then, we draw $ \vec{ -v } $ again but from the endpoint of $ \vec{ u } $. From there, we can finish the Parallelogram Law by drawing $ \vec{ u } $ from the endpoint of the first $ \vec{ -v } $ to the endpoint of the second $ \vec{ -v } $. Then $ \vec{ u } - \vec{ v } $ can be represented as a diagonal line cutting across the parallelogram.
+
+
+  \textbf{Components}\\
+  $\vec{a} = <a_1,a_2,a_3>$ are components of $\vec{a}$
+
+  $\vec{AB}=<x_2-x_1,y_2-y_1>$
+  If $ \vec{AB} $ is a vector with initial print\\
+  $ \vec{AB} = <x_2-x_1,y_2-y_1,z_2-z_1>$ 
+
+  $ \vec{AB} = <-2-2,1-(-3),1-4 > = \boxed{<-4,4-3>}$
+
+  \textbf{Magnitude (or Length) of a Vector}\\
+  The length of the 2-dimensional vector, $ \vec{a} = <a_1,a_2>$ is $\vec{a}=\sqrt{(a_1)^2+(a_2)^2}$. The length of the 3-dimensional vector, $ \vec{a} = <a_1,a_2,a_3> $ is $\vec{a}=\sqrt{(a_1)^2+(a_2)^2+(a_3)^2}$
+
+  \textbf{Vector Addition and Scalar Math (cont.)}\\
+  If $ \vec{a} = <a_1,a_2> $ and $ \vec{b}=<b_1,b_2> $, then 
+  \[
+    \begin{aligned}
+  &1) \quad  \vec{a} + \vec{b}=<a_1+b_1,a_2+b_2>\\ 
+  &2) \quad  \vec{a} = <ca_1,ca_2  \text{for any scalar c}
+    \end{aligned}
+  \]
+
+  \textbf{Ex 1}\\
+  $ <a_1,a_2,a_3 > + <b_1,b_2,b_3>=<a_1+b_1,a_2+b_2,a_3+b_3>$
+
+  \textbf{Ex 2}\\
+  If $ \vec{a} = <4,0,3> $ and $ \vec{-2,1,5} $
+  $ <_1, _2, _3> $
+
+  $ | \vec{a} | = \sqrt{4^2+0^2+3^2} = \sqrt{25}=\boxed{5}$
+
+  \textbf{Properties of Vectors}\\
+  If $ \vec{a}, \vec{b} $ and $ \vec{c} $ are vectors and c and d are scalars, then
+  \[
+    \begin{aligned}
+      &1) \quad \vec{a}+ \vec{b} = \vec{b} + \vec{a}\\
+      &2) \quad \vec{a}+ ( \vec{b} + \vec{c}) = ( \vec{a}+ \vec{b} ) + \vec{c}\\
+      &4) \quad  \vec{a} + \vec{0}= \vec{a}\\
+      &5) \quad  \vec{a}+ \vec{-a}= \vec{0}\\
+      &6) \quad  c( \vec{a}+ \vec{b}) = c \vec{a}+ c \vec{b}\\
+      &7) \quad  (c+d) \vec{a} = c \vec{a} + d \vec{a}\\
+      &8) \quad   (cd)\vec{a} = c(d \vec{a})\\
+      &9) \quad   1 \cdot \vec{a} = \vec{a} 
+    \end{aligned}
+  \]
+
+  \textbf{Standard Basis Vectors}\\
+  $ \vec{i} = <1, 0, 0 > \vec{j}= <0, 1, 0>, \vec{k}= <0,0,1>$
+
+  If $ \vec{a} = <a_1, a_2, a_3> $, then\\
+  $ \vec{a}= <a_1, 0, 0> + <0, a_2, 0> + <0, 0, a_3> $\\
+  $= a_1 <1, 0, 0> + a_2 <0, 1, 0> + a_3 <0, 0, 1>  $\\
+  $ = a_1 \vec{i} + a_2 \vec{j} + a_3 \vec{k} $
+
+  \textbf{Ex 3}\\
+  If $ \vec{a} = \vec{i} +2 \vec{j} -3 \vec{k} $ and $ \vec{b} = 4 \vec{i} + 7 \vec{k} $, express the vector $ 2 \vec{a} + 3 \vec{b} $ in terms of $ \vec{i}, \vec{j} $, and $ \vec{k} $.
+
+  \[
+    \begin{aligned}
+    & 2( \vec{i} + 2 \vec{j} - 3 \vec{k}) + 3( 4 \vec{i} + 7 \vec{k})\\
+    & \vec{i} + 4 \vec{j} - 6 \vec{k} + 12 \vec{i} + 21 \vec{k}\\
+    & \boxed{14 \vec{i} + 4 \vec{j} + 15 \vec{k}}
+    \end{aligned}
+  \]
+
+
+  \textbf{Unit Vector}\\
+  A unit vector is a unit whose length is 1. Note that $ \vec{a} \neq \vec{0} $, then the unit vector $ \vec{u} $ that has the same direction as $ \vec{a} $ is $ \vec{u}= \frac{ \vec{a}}{| \vec{a}|} $
+
+  \textbf{Ex 4}\\
+  Find the unit vector in the direction of the vector $  2 \vec{i} - \vec{j} - 2 \vec{k} $, 
+
+
+
+
+
+\end{document}
