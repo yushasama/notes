@@ -6,7 +6,7 @@
   \maketitle
   \textbf{Row Echelon Form}\\
   1. All non zeros are above any row of all zeros\\
-  2. Each leading entry of a row in a column to the right of the leading entry of the row above it.\\
+  2. Each leading entry of a row in a column is to the right of the leading entry of the row above it.\\
   3. All entries in a column below a leading entry are zeroes
 
   \textbf{Reduced Row Echelon Form}\\
@@ -39,27 +39,35 @@
     \begin{bmatrix}
       1 &4 &5 &-9 &-7\\
       0 &2 &4 &-6 &-6\\
-      0 &0 &0 & 0 &0 &0\\
+      0 &0 &0 & 0 &0 \\
       0 &0 &0 &-5 &0
     \end{bmatrix}
   \]
   
   \textbf{Example 3}
   \[
-    \begin{aligned}
-    &	\begin{bmatrix}
+    \begin{gathered}
+      \text{Matrix Form}\\ 
+    \begin{bmatrix}
       0 &3 &-6 &6 &4 &-5\\
       3 &-7 &8 &-5 &8 &9\\
       3 &-9 &12 &-9 &6 &15
     \end{bmatrix}\\
     ~\\
-    &\text{Echelon Form}\\
-    &\begin{bmatrix}
+    \text{Row Echelon Form}\\
+    \begin{bmatrix}
       3 &-9 &12 &-9 &6 &15\\
       0 &2 &-4 &4 &0 &-14\\
       0 &0 &0 &0 &1 &4
+    \end{bmatrix}\\
+    ~\\
+    \text{Row Echelon Form}\\
+    \begin{bmatrix}
+      1 &0 &-2 &3 &0 &-24\\
+      0 &1 &-2 &2 &0 &-7\\
+      0 &0 &0 &0 &1 &4
     \end{bmatrix}
-    \end{aligned}
+    \end{gathered}
   \]
 
   \textbf{Example 5}\\
@@ -76,10 +84,10 @@
       0 &1 &-2 &2 &0| &-7\\
       0 &0 &0 &0 &1 |&4
     \end{bmatrix}\\
-    & x_1=-24+\\
-    & x_2=-7+20-2t\\
-    & x_3=\vee \\
-    & x_4=t\\
+    & x_1=-24-2x_{3}+3x_{4}  \\
+    & x_2=-7+2x_{2}-2x_{3}   \\
+    & x_3=y \\
+    & x_4=z\\
     & x_5=4\\
     ~\\
     & \begin{bmatrix}

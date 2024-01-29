@@ -36,7 +36,7 @@
     - a_2 \begin{bmatrix}
       b_1 &b_3\\
       c_1 &c_3
-    \end{bmatrix} -
+    \end{bmatrix} +
     a_3 \begin{bmatrix}
      b_1 &b_2\\
      c_1 &c_3
@@ -51,6 +51,7 @@
       3 &0 &1\\
       -5 &4 &2
     \end{bmatrix}\\
+    ~\\
     1 \begin{bmatrix}
       0 &1\\
       4 &2
@@ -62,7 +63,11 @@
     (-1) \begin{bmatrix}
       3 &0\\
       -5 &4
-    \end{bmatrix}\to \boxed{-38}
+    \end{bmatrix}\\
+    ~\\
+    1(0(2)- 1(4))-2(3(2)-1(3(2)-1(-5)))+(-1)(3(4)-0(-5))\\
+    ~\\
+    1(-4)-2()-1(12)\to \boxed{-38}
     \end{gathered}
   \]
 
@@ -109,6 +114,32 @@
 
   \textbf{Example 4}\\
   Show that if $ \vec{a} = <a_1, a_2, a_3> $, then $ \vec{a} \cdot \vec{a} =0 $
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      \vec{i} &\vec{j} &\vec{k}\\
+      a_{1} &a_{2} &a_{3}\\
+      b_{2} &b_{2} &b_{3}\\ 
+    \end{bmatrix}\\
+    = \vec{ i } \begin{bmatrix}
+      a_2 &a_3\\
+      b_2 &b_3
+    \end{bmatrix} - 
+    \vec{ j } \begin{bmatrix}
+      a_1 &a_3\\
+      b_1 &b_3
+    \end{bmatrix} + 
+    \vec{ k } \begin{bmatrix}
+      a_1 &a_2\\
+      b_1 &b_1
+    \end{bmatrix}\\
+    ~\\
+    \vec{a}(a_{2} a_{3} -a_{3} b_{2} )-\vec{j}(a_{1} a_{3} -a_{3} a_{1} )+ \vec{k}(a_{1} a_{2} a_{2} a_{1} )\\
+    ~\\
+    \vec{0}+\vec{0}+\vec{0}=\boxed{\vec{0}} 
+    \end{gathered}
+  \] 
+  
 
   \textbf{Theorem}\\
   The vector $ \vec{ a } \cdot \vec{ b }   $ is orthogonal to both vectors $ \vec{ a } ~ \&~ \vec{ b }   $. 
@@ -135,7 +166,7 @@
       b_1 &b_1
     \end{bmatrix}\\
     ~\\
-     = \vec{ i } (a_2b_3-a_3b_3) - \vec{ j } (a_1b_3 - a_3b_1) + \vec{ k }(a_1b_2 - a_2b3)
+     = a_{1}  (a_2b_3-a_3b_2) - a_{2}  (a_1b_3 - a_3b_1) + a_{3} (a_1b_2 - a_2b_{1})
     \end{gathered}
   \]
 \end{document} 

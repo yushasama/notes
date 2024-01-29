@@ -4,29 +4,29 @@
 
 \begin{document}
   \maketitle
-  \textbf{Def}\\
+  \textbf{Definition}\\
   If $  \vec{a} = <a_1, a_2, a_3> $ and $ \vec{b} = <b_1, _2, b_3> $ then the dot product of $ \vec{a} $ and $ \vec{b} $ is the number $ \vec{a} \cdot \vec{b} $ given by $ \vec{a} \cdot \vec{b} $ given by $ \vec{a} \cdot \vec{b} = a_1b_1+a_2b_2+a_3b_3 $. While for 2 dimensional vectors, $ <a_1, a_2> \cdot <b_1, b_2>= a_1b_1+a_2b_2 $
 
   \textbf{Ex 1. Find the dot product}
   \[
-    \begin{aligned}
-      & <2, 4>\cdot <3, -1> = 2(3)+4(-1)=6-4=\boxed{2}\\
-      & <-1, 7, 4> \cdot <6, 2, -\frac{1}{2}> = -1(6) + 7(2) + 4( -\frac{1}{2}) = \boxed{6}\\
-      & ( \vec{i} + 2 \vec{j} - 3 \vec{k}) \cdot (2 \vec{j} - \vec{k})=1(0)+2(2)+(-3)(-1)=\boxed{7}
-    \end{aligned}
+    \begin{gathered}
+       <2, 4>\cdot <3, -1> = 2(3)+4(-1)=6-4=\boxed{2}\\
+       < -1, 7, 4> \cdot <6, 2, -\frac{1}{2}> = -1(6) + 7(2) + 4( -\frac{1}{2}) = \boxed{6}\\
+       ( \vec{i} + 2 \vec{j} - 3 \vec{k}) \cdot (2 \vec{j} - \vec{k})=1(0)+2(2)+(-3)(-1)=\boxed{7}
+    \end{gathered}
   \]
 
   \textbf{Properties}\\
   If $ \vec{a}, \vec{b} $ and $ \vec{c} $ are 3-dimensional vectors, and c is a scalar, then
 
   \[
-    \begin{aligned}
-     & \vec{a} \cdot \vec{a} = | \vec{a} |^2\\
-     & \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}\\
-     & \vec{a} \cdot ( \vec{b} + \vec{c}) = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}\\
-     & (c \vec{a}) \cdot \vec{b} = c( \vec{a} \cdot \vec{b}) = \vec{a} \cdot (c \vec{b})\\
-     & \vec{0} \cdot \vec{a} = 0
-    \end{aligned}
+    \begin{gathered}
+     \vec{a} \cdot \vec{a} = | \vec{a} |^2\\
+     \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}\\
+     \vec{a} \cdot ( \vec{b} + \vec{c}) = \vec{a} \cdot \vec{b} + \vec{a} \cdot \vec{c}\\
+     (c \vec{a}) \cdot \vec{b} = c( \vec{a} \cdot \vec{b}) = \vec{a} \cdot (c \vec{b})\\
+     \vec{0} \cdot \vec{a} = 0
+    \end{gathered}
   \]
   \textbf{Angle Between 2 Vectors}\\
   $ 0 \le \theta \le \pi $. If $\vec{a}$ and $\vec{b}$ are parallel, then $ \theta = 0 $ or $ \theta = \pi $
@@ -34,9 +34,7 @@
   \textbf{Theorem}\\
   If $ \theta $ is the angle between the vectors $ \vec{a} $ and $ \vec{b} $, then
   \[
-    \begin{aligned}
       \vec{a} \cdot \vec{b}=| \vec{a} |\cdot | \vec{b} | \cdot \cos{\theta}
-    \end{aligned}
   \]
 
   \textbf{Ex 2}\\
@@ -48,8 +46,57 @@
     \end{aligned}
   \]
 
+  \textbf{Ex 3}\\
+  Find the angle between the vectors $ \vec{a} = < 2, 2, -1> \& \vec{b}=< 5, -3, 2> $.
+  \[
+    \begin{gathered}
+    \vec{a} \cdot  \vec{b} = 2(5)+2(-3)+(-1)(2)=2\\
+    ~\\
+    | \vec{a} | = \sqrt{(2)^{2} + (2)^{2} + (-1)^{2}} = \sqrt{9} = 3\\
+    ~\\
+    | \vec{b} | = \sqrt{(5)^{2}+(-3)^{2} + (2)^{2}   } = \sqrt{38}\\
+    ~\\
+    \vec{a} \cdot \vec{b}=| \vec{a} | | \vec{b} | \cos{\theta}\\
+    \cos{\theta}= \frac{\vec{a}\cdot \vec{b}}{| \vec{a} || \vec{b} |}= \frac{2}{3\sqrt{38} } \\
+    ~\\
+    \theta=\cos^{-1}{\frac{2}{3\sqrt{38} }}\approx \boxed{1.46}
+    \end{gathered}
+  \]
+
+  \textbf{Definition}\\
+  Two nonzero vectors $ \vec{a} ~\& ~\vec{b} $ are called \underline{perpendicular} or \underline{orthogonal} if the angle between them is $ \theta=\frac{\pi}{2} $.
+  
+  \textbf{Ex 4}\\
+  Show that $ 2\vec{i}+2\vec{j}-\vec{k} $ is perpendicular to $ 5\vec{i}-4\vec{j}+2\vec{k} $.
+  
+  \[
+    \begin{gathered}
+      (2\vec{i}+2\vec{j}-\vec{k}) \cdot (5\vec{i}-4\vec{4}+2\vec{k})\\
+      2(5) + 2(-4) + (-1)(2)\\
+      10-8-2=0\\
+      \text{Thus, the vectors are perpendicular.}
+    \end{gathered}
+  \]
+
+  \textbf{Intepretation of Dot Product}
+  \[
+    \begin{gathered}  
+  0\le\theta<\frac{\pi}{2}\\
+  \vec{a}\cdot \vec{b}>0, \text{since} \cos{\theta}>0  
+    \end{gathered}
+  \]
+  \[
+    \begin{gathered}
+    \theta=\frac{\pi}{2} \\
+    \vec{a}\cdot \vec{b}=0, \text{since} \cos{\frac{pi}{2}=0 }
+    \end{gathered}
+  \]
+  \textbf{Theorem}\\
+  Two vectors $ \vec{a} ~\& ~\vec{b} $ are orthogonal if and only if $ \vec{a} \cdot \vec{b} = 0$. 
+
   If $ \theta = 0 $, then $ \vec{ a } \cdot \vec{ b }   $ = $ | \vec{ a }  |  | \vec{ b }  |$ since $ \cos{0} = 1$.\\
-  If $ \theta = 0 $, then $ \vec{ a } \cdot \vec{ b }   $ = $ -| \vec{ a }  |  | \vec{ b }  |$ since $ \cos{0} = -1$.\\
+  If $ \theta = 0 $, then $ \vec{ a } \cdot \vec{ b }   $ = $ -| \vec{ a }  |  | \vec{ b }  |$ since $ \cos{0} = -1$.
+
   \textbf{Projections}\\
   $ \vec{ b } = \vec{ PR }   $\\
   $ \vec{ a } = \vec{ PR }   $ \\
