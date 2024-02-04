@@ -142,7 +142,7 @@
   
 
   \textbf{Theorem}\\
-  The vector $ \vec{ a } \cdot \vec{ b }   $ is orthogonal to both vectors $ \vec{ a } ~ \&~ \vec{ b }   $. 
+  The vector $ \vec{ a } \cdot \vec{ b } $ is orthogonal to both vectors $ \vec{ a } ~ \&~ \vec{ b }   $. 
 
   \textbf{Proof}\\
   Let $ \vec{ a } = < a_1, a_2, a_3> ~ \&~ \vec{ b } = < b_1, b_2, b_3>    $. Now,
@@ -166,7 +166,126 @@
       b_1 &b_1
     \end{bmatrix}\\
     ~\\
-     = a_{1}  (a_2b_3-a_3b_2) - a_{2}  (a_1b_3 - a_3b_1) + a_{3} (a_1b_2 - a_2b_{1})
+     = a_{1}  (a_2b_3-a_3b_2) - a_{2}  (a_1b_3 - a_3b_1) + a_{3} (a_1b_2 - a_2b_{1})\\
+     ~\\
+     a_{1}a_{2}b_{3}-a_{1}a_{3}b_{2}-a_{2}a_{1}b_{3}-a_{3}b_{1}+a_{2}a_{3}b_{1}+ab_{1}+a_{3}a_{1}b_{2}-a_{3}a_{2}b_{1}=0\\
+     ~\\
     \end{gathered}
   \]
+    By similar computations, $(\vec{a}\cdot \vec{b}) \cdot \vec{b}=0$. Therefore, $ \vec{a} \cdot \vec{b} $ is orthogonal to both $ \vec{a} ~\&~ \vec{b} $.
+
+    \textbf{Theorem}\\
+    If $ \theta $ is the angle between $ \vec{a} ~\&~ \vec{b}$ (so $ 0\le \theta \le \pi $ ), then  
+    \[
+     | \vec{a} \cdot  \vec{b}| = \vec{a} \vec{b} \sin{\theta}
+    \]
+    \textbf{Corollory}\\
+    Two nonzero vectors $ \vec{a} ~\&~ \vec{b}$ are parallel if and only if $ \vec{a} \cdot \vec{b} = 0 .$
+    
+    \textbf{Interpretation of Cross Product}\\
+    Area of parallelogram $ = \text{base} \cdot  \text{height} = | \vec{a} | |\vec{b}| \sin{\theta}|=| \vec{a} \cdot  \vec{b} |$ 
+
+    \textbf{Ex 5}\\
+    Find a vector perpendicular to the plane that passes through the points $ P(1,4,6), Q(-2,5-1), ~\&~ R(1,-1,1) $. 
+    \[
+      \begin{aligned}
+        1
+      \end{aligned}
+    \]
+    \textbf{Ex 6}\\
+    Find the area of the triangle with vectices $ P(1,4,6), Q(-2,5-1), ~\&~ R(1,-1,1) $.
+    \[
+      \begin{aligned}
+      \text{Area}=\frac{1}{2} | \vec{PQ} \cdot  \vec{PR}|\\
+      ~\\
+      \frac{1}{2} \sqrt{(-40)^{2} + (-15)^{2}+(15)^{2}   }\\
+      ~\\
+      \frac{1}{2} \sqrt{2050}\\
+      ~\\
+      \frac{1}{2} \sqrt{25(82)}\\
+      ~\\
+      \boxed{\frac{5}{2}\sqrt{82} }
+      \end{aligned}
+    \]
+    \textbf{Theorem}\\
+    If $ \vec{a}, \vec{b} ~\&~ \vec{c}$ are vectors and $ c$ is a scalar, then
+    \[
+      \begin{gathered}
+      1)~\vec{a} \cdot \vec{b} = -\vec{b} \cdot  \vec{a}\\
+      ~\\
+      2)~(c\vec{a})\\
+      ~\\
+      3)~ \\
+      ~\\
+      4)~\\
+      ~\\
+      5)~ \\
+      ~\\
+      6)~\vec{a} \cdot (\vec{b} \cdot  \vec{c}) = (\vec{a} \cdot  \vec{c})\vec{b} - (\vec{a} \cdot  \vec{b})\vec{c}
+      \end{gathered}
+    \]
+
+    \textbf{Triple Products}
+    \[
+      \begin{gathered}
+      \vec{a} \cdot  (\vec{b} \cdot \vec{c}) = 
+      \begin{bmatrix}
+        a_{1} &a_{2} &a_{3}\\
+        b_{2} &b_{2} &b_{3}\\
+        c_{1} &c_{2} &c_{2} 
+      \end{bmatrix}\\
+      ~\\
+      V = (\text{Area of Base})(\text{Height})\\
+      ~\\
+      | \vec{b} \cdot \vec{c} | \cdot  | \vec{a} | \cdot  | \cos{\theta} |\\
+      ~\\
+      | \vec{a} \cdot  (\vec{b} \cdot  \vec{c}) |
+      \end{gathered}
+    \]
+    \textbf{Note}\\
+    If $ \vec{a} \cdot (\vec{b} \cdot  \vec{c}) = 0$, then the vectors are coplanar (lie on the same plane).
+
+    \textbf{Ex 7}\\
+    If $ \vec{a} = < 1, 4, -7>, \vec{b}= < 2, -1, 4> ~\&~ \vec{c}= < 0, -9, 18>  $, then
+    \[
+      \begin{gathered}
+      \vec{a} \cdot  (\vec{b} \cdot  \vec{c}) = 
+      \begin{bmatrix}
+        1 &4 &-7\\
+        2 &-1 &4\\
+        0 &-9 &18
+      \end{bmatrix}\\
+      ~\\
+      1(-18-(-36))-4(36-0)-7(-18-0)\\
+      ~\\
+      18-144+126\\
+      ~\\
+      0
+      \end{gathered}
+    \]
+    Thus, $ \vec{a}, \vec{b}, ~\&~\vec{c} $ are coplanar.
+
+    \textbf{Torque}\\
+    Consider a force $ \vec{F} $ acting on a rigid body at a point given by a position vector $\vec{r}$. The torque $ \tau $ (relative to the origin) is
+    \[
+      \vec{\tau}=\vec{r} \cdot  \vec{F}
+    \]
+    and measures the tendency of the body to rotate about the origin. THe magnitude of the torque vector is
+    \[
+    | \vec{\tau}| =| \vec{r} \cdot  \vec{F} | = |\vec{r}| \cdot  | \vec{F} | \cdot \sin{\theta}
+    \]
+    where $ \theta $ is the angle between $ \vec{r} ~\&~\vec{F} $.
+
+    \textbf{Ex 8}\\
+    A bolt is tightened by applying a $ 40N $ force to a $ 0.25m $ wrench. Find the magnitude of the torque about the center of the bolt. 
+
+    \[
+      \begin{gathered}
+      | \tau | = 0.25(40) \sin{75^o}\\
+      ~\\
+      \boxed{9.66N\cdot m}
+      \end{gathered}
+    \]
+    
+    
 \end{document} 

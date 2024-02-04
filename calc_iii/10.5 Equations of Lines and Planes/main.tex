@@ -1,0 +1,77 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{10.5 Equations of Line and Planes}
+
+\begin{document}
+  \maketitle
+  A line in the $ xy $ plane is determined when a point on the line and the direction of the line (its slope or angle of inclination) are given. The equation of the line can then be written using point-slope form.
+
+  \textbf{Vector Equation}
+  \[
+    \begin{gathered}
+    \vec{r}=\vec{r}_{0}+\vec{v}\\
+    ~\\
+    \vec{r}=< x, y, z> \to \text{a point on the line}\\
+    ~\\
+    \vec{v}=\text{parallel to line} L 
+    \end{gathered}
+  \]
+
+  If $ \vec{v}=< a, b, c>$, then $ t\vec{v}=< ta, tb, tc>$ and
+ \[
+   \begin{gathered}
+  < x, y, z>=< x_{0}, y_{0} ,z_{0}  >+< ta, tb, tc>\\
+  ~\\
+  < x, y, z> =< x_{0} +ta,y_{0} +tb ,z_{0}+tc>~\\ 
+   \end{gathered}
+ \]
+
+ Thus, 
+ \[
+   \begin{aligned}
+   &x=x_{0}+at\\
+   &y=y_{0}+bt~\to~\text{Parametric Equation}\\
+   &z=z_{0}+ct\\ 
+   \end{aligned}
+ \]
+
+  \textbf{Note}\\
+  If a line $ L $ passes through the tips of position vectors $ \vec{r}_{0}  ~\&~\vec{r}_{1} $, then the vectors $ \vec{r}_{1} - \vec{r}_{0}$ is parallel to $ L $ and
+  \[
+    \begin{gathered}
+    \vec{r}=\vec{r}_{0}+t(\vec{r}_{1} -\vec{r}_{0} )\\
+    ~\\
+    \vec{r}=\vec{r}_{0}+t\vec{r}_{1}-t\vec{r}_{0}\\
+    ~\\
+    \vec{r}=\vec{r}_{0}-t\vec{r}_{0}+t\vec{r}_{1}\\
+    ~\\
+    \vec{r}=(1-t)\vec{r}_{0}+t\vec{r}_{1},~0\le t \le 1\\
+    ~\\
+    \text{The equation above is the vector equation of line segment from } \vec{r}_{1} \to \vec{r}_{1}.  
+    \end{gathered}
+  \]
+  
+  \textbf{Def}\\
+  2 lines are skew if they do not intersect and are not parallel.
+
+  \textbf{Ex 3}\\
+  How do we know if two lines are parallel or not? We can use parametric equations as they are able to show if 2 lines are skew lines.
+  \[
+    \begin{gathered}
+      r = r_{0}+tv\\
+      ~\\
+      <x,y,z>=<x_{0},y_{0},z_{0}>+<ta,tb,tc>\\
+      ~\\
+      < x, y, z> = < x_{0}+ta, y_{0}+tb ,z_{0}+tc  >\\ 
+    L_{1},\qquad x=1+t \qquad y=-2+3t, \qquad \zstroke=4-t\\
+    L_{2},\qquad x=2s \qquad y=3+s \qquad \zstroke=-3+4s\\
+    ~\\
+    L_{1}=< 1, 3, -1> \qquad L_{2}=< 2, 1, 4>    
+    \end{gathered}
+  \]
+  
+  \textbf{Ex 5}\\
+  $ \vec{v} \neq \vec{v_{2} } $ for some scalar $ c $, so $ L_{1} ~\&~L_{2}$ are not parallel.    
+  
+
+\end{document}

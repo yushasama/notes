@@ -1,0 +1,75 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{1.3 Vector Equations}
+
+\begin{document}
+  \maketitle
+  \textbf{What is Linear Algebra?}\\
+  Linear equations in $ n $ unknown $ x_{1}...mx_{n}   $
+  \[
+    a_{1}x_{2}+a_{2}x_{2}+...+a_{n}x_{n}=k      
+  \]
+  \textbf{System of Linear Equations}\\
+  M linear equations in $ n $ unknowns $x_{1},...,x_{n}.$ 
+  \[
+    \begin{gathered}
+    \{a_{1}x_{1}+a_{2}x_{2}+...+a_{n}x_{n}=b_{1}\to Ax=b \\
+    \{ a_{m1}x_{1}+a_{m2}x_{2}+...+a_{mn}x_{n}=b_{m}\\
+    ~\\ 
+      Ax=b\\
+      \begin{bmatrix}
+        a_{1} &... &a_{n}\\
+        . & &.\\
+        . & &.\\
+        a_{m1} &... &a_{mn}  
+      \end{bmatrix}
+      \begin{bmatrix}
+        x_{1}\\
+        .\\
+        .\\
+        x_{n} 
+      \end{bmatrix} = 
+      \begin{bmatrix}
+        b_{1}\\
+        .\\
+        .\\
+        b_{m} 
+      \end{bmatrix}
+    \end{gathered}
+  \]
+  \textbf{2 Dimensional Matrix}
+  \[
+    \begin{gathered}
+      \mathbb{R}^{2},~
+      \vec{x}=
+      \begin{bmatrix}
+        x_{1}\\
+        x_{2} 
+      \end{bmatrix}
+    \end{gathered}
+  \]
+  \textbf{Operations on Vectors}
+  \[
+    \begin{gathered}
+    \text{Vector Addition}\\
+    \vec{u}+\vec{v}\\
+    ~\\
+    \text{Scalar Multiplication}\\
+    c \cdot \vec{u}\\
+    ~\\
+    \end{gathered}
+  \]
+    \textbf{Linear Combinations *}\\
+    Given vectors $ v_{1},v_{2},v_{p} \in \mathbb{R}^{n}$ and scalars $ c_{1},c_{2},...,c_{p}    $. The vector $ y $ defined by $ y=c_{1}v_{1}+c_{2}v_{2}+...+c_{3}v_{3}$ is called a linear combination of the vectors $ v_{1},...,v_{p}$ with weights $ c_{1},...,c_{p}$.
+
+    An example of linear combinationation being applied would be RGB colors. Where $ v_{1},v_{2} ~\&~,v_{3}$ are red, green, \& blue. While the scalar values $ c_{1},c_{2}, ~\&~c_{3}$ would be the magnitude of those colors.  
+
+   \textbf{Least Squares}\\
+   Span $ {v_{1},...,v_{p}}$ is the set of all linear combinatiopns of $v_{1},v)_{2},...,v_{p}.$
+   \[
+     \begin{gathered}
+     v_{1},v_{2},v_{3}=
+     \end{gathered}
+   \]
+       
+\end{document}
