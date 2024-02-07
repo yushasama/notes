@@ -1,0 +1,140 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{1.7 Linear Independence}
+
+\begin{document}
+  \maketitle
+  Given vectors $ \{v_{1},v_{2},...v_{p}\} \in \mathbb{R}^{n} $. We will solve the system of equations $ x_{1}v_{2}+x_{2}v_{2}+...+x_{p}v_{p}=0$. $ v_{1}v_{1}, ..., x_{p}v_{p}$ are vectors in $\mathbb{R}^{n}$ that we will be solving for and eventually give us values for $ x_{1},x_{2},...,x_{p}$.
+
+  \textbf{Two Cases}
+  \[
+    \begin{gathered}
+      1)~\text{If} x_{1}=0, x_{2}=0,...,x_{p}=0~\text{then we say that the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly independent.} \\
+      ~\\
+      2)~\text{If} x_{1},...,x_{p} \text{ are not all zeros, then the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly dependent.} 
+    \end{gathered}
+  \]
+
+  \textbf{Ex 1 p60}
+  \[
+    \begin{gathered}
+    v_{1}= \begin{bmatrix}
+      1\\
+      2\\
+      3
+    \end{bmatrix}
+    v_{2} = \begin{bmatrix}
+      4\\
+      5\\
+      6
+    \end{bmatrix}
+    v_{3}=\begin{bmatrix}
+      2\\
+      1\\
+      0
+    \end{bmatrix} \\
+    \end{gathered}
+  \]
+  
+  1A. Determine if the set $ \{v_{1},v_{2},v_{3}\} $ is linearly independent.
+  2B. If possible find a linear dependence relation among $ v_{1},v_{2},v_{3}$.
+\[
+  \begin{gathered}
+  \text{A) }
+  x_{1}v_{1}+x_{2}v_{2}+x_{3}v_{3}=0, \qquad v_{1},...v_{p}  \text{are vectors in } \mathbb{R}^{3}.\\
+  ~\\
+  \begin{bmatrix}
+    1 &4 &2 &0\\
+    2 &5 &1 &0\\
+    3 &6 &0 &0
+  \end{bmatrix} \to 
+  \begin{bmatrix}
+    1 &4 &2 &0\\
+    0 &-3 &3 &0\\
+    0 &0 &0 &0
+  \end{bmatrix}\to 
+  \begin{bmatrix}
+    1 &4 &2 &0\\
+    0 &1 &1 &0\\
+    0 &0 &0 &0
+  \end{bmatrix}\\
+  ~\\
+  x_{1},~x_{2}=\text{pivot},~ x_{3} = \text{free}\\
+  ~\\
+  x_{3}=1,~
+  x_{2}=-1,~
+  x_{1}=-4x_{2}-2x_{3}\to 2
+  ~\\
+  (2,-1,1) \text{ is a solution. So the set } \{v_{1},v_{2},v_{3}\} \text{ is linearly dependent.}\\
+  ~\\
+  \text{B) Linear Dependence Relation}\\
+  ~\\
+  2v_{1}-v_{2}+v_{3}=0   
+  \end{gathered}\\
+  \]
+
+  \textbf{Ex 2 p61}\\
+  Determine if the columns of a matrix, $ A $ are linearly independent.
+  \[
+    \begin{gathered}
+    A=\begin{bmatrix}
+      0 &1 &4\\
+      1 &2 &-2\\
+      5 &8 &0
+    \end{bmatrix}\\
+    ~\\
+    x_{1}c_{1}+x_{2}c_{2}+x_{3}c_{3}=0, \qquad \text{is what we are solving for where } c_{n} \text{ represents a column.}\\
+    ~\\
+    x_{1}\begin{bmatrix}
+      0\\
+      1\\
+      5
+    \end{bmatrix} +
+    x_{2}\begin{bmatrix}
+      1 \\
+      2\\
+      8
+    \end{bmatrix} +x_{3} \begin{bmatrix}
+      4\\
+      -1\\
+      0
+    \end{bmatrix}  = \begin{bmatrix}
+      0\\
+      0\\
+      0
+    \end{bmatrix}\\
+    ~\\
+    \begin{bmatrix}
+      0 &1 &4\\
+      1 &2 &-1\\
+      5 &8 &0
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_{1}\\
+      x_{2}\\
+      x_{3}  
+    \end{bmatrix} =
+    \begin{bmatrix}
+      0\\
+      0\\
+      0
+    \end{bmatrix}\\
+    ~\\
+    Ax=0 \\
+    ~\\
+    \begin{bmatrix}
+      0 &1 &4 &0\\
+      1 &2 &-1 &0\\
+      5 &8 &0 &0
+    \end{bmatrix}\to
+    \begin{bmatrix}
+      1 &2 &-1 &0\\
+      0 &1 &4 &0\\
+      0 &0 &13 &0
+    \end{bmatrix}\\
+    ~\\
+    x_{3}=0,~x_{2}=0,~x_{1}=0,~\text{linearly independent}
+    \end{gathered}
+  \]
+  
+\end{document}

@@ -9,11 +9,11 @@
   \textbf{Vector Equation}
   \[
     \begin{gathered}
-    \vec{r}=\vec{r}_{0}+\vec{v}\\
+    \vec{r}=\vec{r}_{0}+t\vec{v}\\
     ~\\
     \vec{r}=< x, y, z> \to \text{a point on the line}\\
     ~\\
-    \vec{v}=\text{parallel to line} L 
+    \vec{v}=\text{parallel to line } L 
     \end{gathered}
   \]
 
@@ -47,7 +47,7 @@
     ~\\
     \vec{r}=(1-t)\vec{r}_{0}+t\vec{r}_{1},~0\le t \le 1\\
     ~\\
-    \text{The equation above is the vector equation of line segment from } \vec{r}_{1} \to \vec{r}_{1}.  
+    \text{The equation above is the vector equation of line segment from } \vec{r}_{0} \to \vec{r}_{1}.  
     \end{gathered}
   \]
   
@@ -55,23 +55,121 @@
   2 lines are skew if they do not intersect and are not parallel.
 
   \textbf{Ex 3}\\
-  How do we know if two lines are parallel or not? We can use parametric equations as they are able to show if 2 lines are skew lines.
+  How do we know if two lines are parallel or not? We can use parametric equations as they are able to show if 2 lines are skew lines. The reasoning behind this is these skew lines can be thought of the vector $ \vec{v} $ that said lines are parallel to. Intuitionally, the skew lines can be represented by $ \vec{v} $ from $ r=r_{0}+t \vec{v}  $.  
   \[
     \begin{gathered}
-      r = r_{0}+tv\\
+      r = r_{0}+t \vec{v}\\
       ~\\
       <x,y,z>=<x_{0},y_{0},z_{0}>+<ta,tb,tc>\\
       ~\\
-      < x, y, z> = < x_{0}+ta, y_{0}+tb ,z_{0}+tc  >\\ 
+      < x, y, z> = < x_{0}+ta, y_{0}+tb ,z_{0}+tc  >\\
+      ~\\
     L_{1},\qquad x=1+t \qquad y=-2+3t, \qquad \zstroke=4-t\\
     L_{2},\qquad x=2s \qquad y=3+s \qquad \zstroke=-3+4s\\
     ~\\
-    L_{1}=< 1, 3, -1> \qquad L_{2}=< 2, 1, 4>    
+    L_{1}=< 1, 3, -1> \qquad L_{2}=< 2, 1, 4> \\
+    ~\\
+    \vec{v} \neq \vec{v}_{2} \text{ hence these lines are not parallel. Next we are to determine if these lines intersect or not.}\\
+    ~\\
+    1+t=2s \qquad -2+3t = 3+s \qquad 4-t=-3+4s\\
+    ~\\
+    t = 2s-1, 3t=5+s, 7=4s+t\\
+    ~\\
+    3t=5+s\to 6s-3=5+s \to s= \frac{8}{5}\\
+    ~\\
+    t=2s-1\to t= \frac{11}{5} 
+    7=4s+t\to 7 \neq \frac{44}{11}+\frac{8}{5}\\
+    \end{gathered}
+  \]
+  Because the third equation fails to be satisfied, these lines are not intersecting nor parallel due to failing the previous test. Hence, these are valid skew lines.
+
+  \textbf{Equations of Planes}\\
+  A plane cannot be described by a mere point and direction like a line. Thus a vector that is parallel to the plane will not be able to give us the "direction" of a plane. However, if the vector were to be perpendicular, the "direction" of the plane will be given. 
+
+  A plane can be determined  by a point $ P_{0} (x_{0},y_{0}, z_{0})$ in the plane and an orthogonal vector $ \vec{n} $. This orthogonal vector $ \vec{n} $ is to be called a normal vector. Given an arbitrary point $ P(x,y,z) $ and $ r_{0} ~\&~ r_{1} $ be the position vectors of $ P_{0} ~\&~ P$.
+
+  So now the vector $ \vec{r}-\vec{r_{0} }$ be represented by $ \vec{P_{0}P} $. The normal vector $ \vec{n} $ is orthogonal to every vector in the given plane especially to the vector $ \vec{r}-\vec{r_{0} } $. Due to the fact that two vectors are orthogonal if their dot product is zero, we have
+  \[
+    \begin{gathered}
+    n \cdot (r-r_{0} )=0\\
+    ~\\
+    n \cdot r - n \cdot r_{0}=0\\
+    ~\\
+    n \cdot r = n \cdot r_{0} 
+    \end{gathered}
+  \]
+  This is the vector equation of our plane. By writing $ n=< a, b, c >, r= < x, y, z>, ~\&~ r_{0}=< x_{0}, y_{0} , z_{0}  >    $. We can obtain a scalar equation of the plane by transforming the vector equation like so
+  \[
+    \begin{gathered}
+    n \cdot (r-r_{0})=0\\
+    ~\\
+    < a, b, c > \cdot < x-x_{0} , y-y_{0} , z-z_{0} > = 0\\
+    ~\\
+    \boxed{a(x-x_{0}) + b(y-y_{0} )+c(z-z_{0} )=0} 
+    \end{gathered}
+  \]
+
+  \textbf{Ex 4}\\
+  Find an equation of the plane through the point $ (2,4,-1) $ with normal vector $ n=< 2, 3, 4 >  $ (why no arrow?). Find the intercepts and sketch the plane.
+  \[
+    \begin{gathered}
+    v=< a, b, c>\to < 2, 3, 4 >\\
+    ~\\
+    r_{0} =< x_{0} , y_{0} , z_{0}  > \to < 2, 4, -1 >\\
+    ~\\
+    n \cdot (r-r_{0} ) = 0 \to < 2, 3, 4 > \cdot < x-2, y-4, z+1 > = 0\\
+    ~\\
+    2x+3y+4Z=12.\\
+    ~\\
+    \text{Intercepts}\\
+    x,~y=z=0\\
+    y,~x=z=0\\
+    z,~x=y=0\\
+    ~\\
+    x = (6,0,0) \qquad y = (0,4,0) \qquad z=(0,03)
+    \end{gathered}
+  \]
+ 
+  There is another way to write the equation of a plane
+  \[
+    \begin{gathered}
+    ax+by+cz+d=0, ~ d = -(ax_{0}+by_{0} + cz_{0}   )
+    \end{gathered}
+  \]
+
+  This equation is called a linear equation in $ x,y,z $.
+
+  \textbf{Ex 5}\\
+  Find the equation of the plane that passes through the points $ P(1,3,2), Q(3,-1,6),~\&~ R(5,2,0) $.
+  \[
+    \begin{gathered}
+    \vec{PQ}=< 2, -4, 4 >\\
+    \vec{PR}=< 4, -1, -2 >\\
+    ~\\
+    \vec{n}=\vec{PQ} \times \vec{PR} = \begin{bmatrix}
+      \vec{i} &\vec{j} &\vec{k}\\
+      2 &-4 &4\\
+      4 &-1 &-2
+    \end{bmatrix}\\
+    ~\\
+    \vec{i}(8-(-4)) - \vec{j}(-4 - 16) + \vec{k}(-2 - (-16))\to 12\vec{i} + 20\vec{j} + 14\vec{k}\\
+    ~\\
+    \vec{i} = (x-1), ~ \vec{j}=(y-3), \vec{z-2}=0\\
+    ~\\
+    12(x-1)+20(y-3)+14(z-2)=0\to \boxed{6x+10y+7z-50}
+    \end{gathered}
+  \]
+
+  \textbf{Parallel Planes}\\
+  If normal vectors of 2 planes are parallel to each other, then those 2 planes are parallel. However if 2 planes are not parallel, then there exists an acute angle betweenthe normal vector of those two planes.
+
+  \textbf{Ex 6}\\
+  Find the angle between the planes $ x+y+z=1 ~\&~ x-2y+3z=1$. Then find the symmetric equations of the line of intersection $ L $ of these two planes.
+  \[
+    \begin{gathered}
+    \vec{n}=-(1,1,1)
     \end{gathered}
   \]
   
-  \textbf{Ex 5}\\
-  $ \vec{v} \neq \vec{v_{2} } $ for some scalar $ c $, so $ L_{1} ~\&~L_{2}$ are not parallel.    
   
-
 \end{document}
