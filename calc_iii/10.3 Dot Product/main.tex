@@ -98,12 +98,33 @@
   If $ \theta = 0 $, then $ \vec{ a } \cdot \vec{ b }   $ = $ -| \vec{ a }  |  | \vec{ b }  |$ since $ \cos{0} = -1$.
 
   \textbf{Projections}\\
-  $ \vec{ b } = \vec{ PR }   $\\
-  $ \vec{ a } = \vec{ PR }   $ \\
-  $ \vec{ PR } = \vec{ PS } + \vec{ SR }   $
-  Vector Projection of $ \vec{ b }  $ onto $\vec{ a }$ is proj$ _{ \vec{ a } } \vec{ b }    $\\
-  Scalar projection $ \vec{ b }  $ onto $ \vec{ a }  $ or "component of $ \vec{ b }  $ along $ \vec{ a }  $  " ( comp$ _{ \vec{ a } } \vec{ b }   $ )  \\
-Since $ \vec{ a }  \cdot \vec{ b }  = 1 | \vec{ a }  | | \vec{ b }  | \cos{\theta} $, comp $ _{ \vec{ a }}  \vec{ b } = | \vec{ b } | \cos{\theta} = \frac{ \vec{ a } \cdot \vec{ b }   }{ | \vec{ a }  | }  $\\
+  Suppouse we have two vectors, $ a ~\&~ b $. The projection of $ b $  onto another vector, $ a $ can be thought of the shadow of vector $ b $ that overlaps vector $ a $ from vertices $ P ~\&~ S $ or vector $ \vec{PS} $. So then the vector $ \vec{PS} $ is the vector projection of $ b $ onto $ a $ or denoted as comp$_{a}b$. 
+
+  \begin{center}
+    \includegraphics[width=8cm]{vector_projection}
+  \end{center}
+
+  There is another type of projection called a scalar projection, which is the signed magnitude of comp$_{a}b$. 
+
+  \[
+    \begin{gathered}
+      \text{Scalar Projection of } b \text{ onto } a\\
+      \text{comp}_{a}b = \frac{a \cdot b}{| a |}\\
+      ~\\ 
+    \text{Vector Projection of } b \text{ onto } a\\
+    \text{proj}_{a}b = \frac{a \cdot b}{| a |} \cdot \frac{a}{| a |}
+    \end{gathered}
+  \]
+
+  Suppouse we have two vectors $ \vec{a} ~\&~ \vec{b} $. The vector projection of $ \vec{b} $ onto $ \vec{a} $ is proj$ _{\vec{a}}\vec{b}  $. While the scalar projetion of $ \vec{b} $ onto $ \vec{a} $ is comp$ _{\vec{a}}\vec{b}$. Also note that the composition formula is derived from the dot product formula like so
+  \[
+    \begin{gathered}
+     \vec{a} \cdot  \vec{b} = | \vec{a} | | \vec{b} | \cos{\theta}\\
+     ~\\
+     \frac{\vec{a} \cdot \vec{b}}{| \vec{a} |} = | \vec{b} | \cos{\theta}
+    \end{gathered}
+  \]
+
 \textbf{Ex 5}\\
 Find the scalar and vector projects of $  \vec{ b } = < 1, 1, 2>   $ onto $ \vec{ a } = < -2, 3, 1>   $   
 
@@ -115,8 +136,9 @@ Find the scalar and vector projects of $  \vec{ b } = < 1, 1, 2>   $ onto $ \vec
 
 \textbf{Calculating Work}\\
 The work done bt a constant force $ f $  in moving an object through a distance $ d $  is $ W=FD $.\\
-Suppouse the constant force is a vector $ \vec{ F }  $ pointing in a direction different from the displacement vector $\vec{ D }$.\\
-If the force moves the object from points $ P \to Q $, then
+Suppouse the constant force is a vector $ \vec{ F }  $ pointing in a direction different from the displacement vector $\vec{ D }$.
+
+If the force moves the object from points $ P \to Q $ along a straight line ($ \theta = 0,~cos(\theta)=1 $ ), then the work can be calculated like so
 \[
   \begin{aligned}
   & W= ( | \vec{ F }  | \cos{\theta})\\ 
