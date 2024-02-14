@@ -1,0 +1,32 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{2.2 The Inverse of A Matrix}
+
+\begin{document}
+  \maketitle
+  \textbf{Definition}\\
+  An $ n \times n $ matrix $ A $ is said to be invertible if there is an $ n \times n $ matrix $ C $ such that $ AC = I ~\&~ CA=I$. Where $ I = I_{n} $ the $ n \times n $ identity matrix. 
+  \[
+    \begin{gathered}
+    I=I_{2} = \begin{bmatrix}
+      1 &0\\
+      0 &1
+    \end{bmatrix} = [Ie_{1},Ie_{2}  ] \qquad
+    I = I_{3} = \begin{bmatrix}
+      1 &0 &0\\
+      0 &1 &0\\
+      0 &0 &1
+    \end{bmatrix} = [Ie_{1},Ie_{2},Ie_{3}   ]\\
+    ~\\
+    I=I_{n} = [Ie_{1}, Ie_{2},...Ie_{n}]  
+    \end{gathered}
+  \]
+  
+  \textbf{Algebraic Representation}\\
+  $ (CA)x = Ix = x $, with this we can say that $ I $ is essentially "$ 1 $". 
+  \[
+    \begin{gathered}
+    A \cdot A^{-1} = A^{-1} \cdot A = I  
+    \end{gathered}
+  \] 
+\end{document}
