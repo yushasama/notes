@@ -1,17 +1,18 @@
 \documentclass{article}
 \input{../cfg/preamble}
-\title{1.7 Linear Independence}
+\title{1.5 Linear Independence}
 
 \begin{document}
   \maketitle
+  \textbf{Homogeneous Linear Systems}\\
   Given vectors $ \{v_{1},v_{2},...v_{p}\} \in \mathbb{R}^{n} $. We will solve the system of equations $ x_{1}v_{2}+x_{2}v_{2}+...+x_{p}v_{p}=0$. $ v_{1}v_{1}, ..., x_{p}v_{p}$ are vectors in $\mathbb{R}^{n}$ that we will be solving for and eventually give us values for $ x_{1},x_{2},...,x_{p}$.
 
   \textbf{Two Cases}
   \[
     \begin{gathered}
-      1)~\text{If} x_{1}=0, x_{2}=0,...,x_{p}=0~\text{then we say that the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly independent.} \\
+      1)~\text{If } x_{1}=0, x_{2}=0,...,x_{p}=0~\text{then we say that the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly independent.} \\
       ~\\
-      2)~\text{If} x_{1},...,x_{p} \text{ are not all zeros, then the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly dependent.} 
+      2)~\text{If } x_{1},...,x_{p} \text{ are not all zeros, then the set} \{v_{1},v_{2},...,v_{p}\} \text{is linearly dependent.} 
     \end{gathered}
   \]
 
@@ -128,13 +129,13 @@
       5 &8 &0 &0
     \end{bmatrix}\to
     \begin{bmatrix}
-      1 &2 &-1 &0\\
+      1 & &-1 &0\\
       0 &1 &4 &0\\
       0 &0 &13 &0
     \end{bmatrix}\\
     ~\\
-    x_{3}=0,~x_{2}=0,~x_{1}=0,~\text{linearly independent}
+  x_{3}=0,~x_{2}=0,~x_{1}=0,~\text{linearly independent} 
     \end{gathered}
   \]
-  
+  Due to no free variables existing. Meaning that there is only a trivial solution for the equation $Ax=0$ thus the columns of $A$ are linearly independent.
 \end{document}
