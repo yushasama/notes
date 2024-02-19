@@ -1,0 +1,80 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{11.5 Chain Rule}
+
+\begin{document}
+  \maketitle
+  \textbf{Introduction}\\
+  There are several versions of the Chain Rule for multi variable functions. Each of these versions give a rule for differentiating a composite functions.
+
+  \textbf{Chain Rule Case 11}\\
+  $ z=f(x,y) $ with $ x,y =g(t),h(t) $, meaning that $ x ~\&~ y $ are both functions of $ t $. Then $ z $ is a differentiable function of $ t $. Assume that $ f_{x} ~\&~ f_{y}   $ are continuous so $ f $ is differentiable.  
+  \[
+    \begin{gathered}
+    z=f(x,y),~x=g(t),~y=h(t)\\
+    ~\\
+    \frac{dz}{dt} = z_{x} \frac{dx}{dx} + z_{y}\frac{dy}{dt} =  \frac{\partial z}{\partial x} \frac{dx}{dt}+\frac{\partial z}{\partial y} \frac{dy}{dt} 
+    ~\\
+    \end{gathered}
+  \]
+
+  \textbf{Ex 1}\\
+  If $ z=x^{2}y+3xy^{4} $, where $ x=\sin{2t} ~\&~ y=\cos{t}$, find $ \frac{dz}{dt} $ when $ t=0 $.
+  \[
+    \begin{gathered}
+    \frac{\partial z}{\partial x} = 2xy+3y^{4},~\frac{dx}{dt} =2\cos{2t} \qquad \frac{\partial z}{\partial x}=x^{2}+12xy^{3},~\frac{dy}{i}=-\sin{t}\\
+    ~\\
+    \frac{dz}{dt} = (2xy+3y^{3} )(2\cos{2t})+(x^{2}+12x^{3} )(-\sin{t})\\
+    ~\\
+    t=0,~x=\sin{0}=0,~y=\cos{0}=1\\
+    ~\\
+  \frac{dz}{dt} |_{t=0} =(0+3)(2\cdot 1)+(0+0)(-\sin{0})=\boxed{6}
+    \end{gathered}
+  \]
+
+  \textbf{Ex 2}\\
+  $ PV =8.31T$. Find the rate at which the pressure is changing when the temperature is $ 300K $ and increasing at a rate of $ 0.1K/s $ and the volume is $ 100L $ and ijncreasing at a rate of $ 0.2L/s $.
+  \[
+    \begin{gathered}
+    T=300, \frac{dT}{dt}=0.1,~V=100,~\frac{dV}{dt}=0.2\\
+    ~\\
+    P=8.31\frac{T}{V} \\
+    ~\\
+  \frac{dP}{dt}= P_{T}\frac{dT}{dt}+ P_{v}\frac{dV}{dt} = \frac{\partial P}{\partial T} \frac{dT}{dt}+\frac{\partial P}{\partial V} \frac{dV}{dt}\\
+  ~\\
+  \frac{\partial}{\partial T}= 8.31\frac{T}{V},~\frac{dT}{dt}= 0.1  \qquad \frac{\partial P}{\partial V}=-2\frac{8.31T}{v^{2} },~\frac{dV}{dt} =0.2\\
+  ~\\
+  \frac{dP}{dt} = 0.1 (\frac{8.31}{100}) -0.2(\frac{8.31(300)}{100^{2}})=\boxed{-0.04155}\\
+  ~\\
+  \text{The pressure is decreasing at a rate of about } 0.042kPa/s  
+    \end{gathered}
+  \]
+ 
+  \textbf{Chain Rule Case 2}\\
+  Suppouse that $ z=f(x,y) $ is a differentiable function of $ x ~\&~ y $, where $ x=g(s,t) ~\&~ y=h(s,t)$ are differentiable functions of $ s ~\&~ t $. Then
+  \[
+    \begin{gathered}
+    \frac{\partial z}{\partial s} = z_{x}x_{s}+z_{y}y_{s} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial s} +\frac{\partial z}{\partial y} \frac{\partial y}{\partial s}\\
+    ~\\
+    \frac{\partial z}{\partial t} = z_{x} x_{t}+z_{y}y_{t} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \frac{\partial y}{\partial t}    
+    \end{gathered}
+  \]
+
+  \textbf{Ex 3}\\
+  If $ z=e^{x}\sin{y} $, where $ x=st^{2}  ~\&~ y=s^{2}t $, find $ \frac{\partial z}{\partial s} ~\&~ \frac{\partial z}{\partial t}  $.
+  \[
+    \begin{gathered}
+      \frac{\partial z}{\partial s}:= \qquad \frac{\partial z}{\partial x}=e^{x}\sin{y},~\frac{\partial x}{\partial s}=t^{2},~\frac{\partial z}{\partial y}=e^{x}\cos{y},~\frac{\partial y}{\partial s}=2st\\
+    \frac{\partial z}{\partial s}= t^{2} e^{x}\sin{y} )+2ste^{x}\cos{y}\\
+    \boxed{\frac{\partial z}{\partial s} = t^{2}e^{st^{2}}\sin{(s^{2}t)} + 2st e^{st^{2} }\cos{(s^{2}t)}}\\
+    ~\\
+    ~\\
+    \frac{\partial z}{\partial s} := \qquad \frac{\partial z}{\partial x}=e^{x}\sin{y},~\frac{\partial x}{\partial t}=2ts,~\frac{\partial z}{\partial y}=e^{x}\cos{y},~\frac{\partial y}{\partial t}=s^{2}\\
+    \frac{\partial z}{\partial s}=2ste^{x}\sin{y}+s^{2}e^{x}\cos{y}\\
+    \boxed{\frac{\partial z}{\partial s}= 2ste^{st^{2}}\sin{(st^{2})}+s^{2}e^{st^{2}}\cos{(s^{2}t)}}      
+    \end{gathered}
+  \]
+  
+  
+  
+\end{document}
