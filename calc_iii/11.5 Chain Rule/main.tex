@@ -75,6 +75,59 @@
     \end{gathered}
   \]
   
-  
-  
+  \textbf{General Version}\\
+  Suppouse that $ u $ is a differentiable function of the $ n $ variables $ x_{1},x_{2},...,x_{n} $ and each $ x_{i}  $ is a differentiable function of the $ m $ variables $ t_{1},t_{2},...,t_{m} $.
+  \[
+      \begin{gathered}
+      \frac{\partial u}{\partial t_{i} } = \frac{\partial u}{\partial x_{1} } \frac{\partial x_{1} }{\partial t_{j} }+\frac{\partial u}{\partial x_{2} }\frac{\partial x_{2}}{\partial t_{j}}+...+\frac{\partial u}{\partial x_{n} }\frac{\partial x_{n} }{\partial t_{m} }
+      \end{gathered}
+  \]
+  for each $ j =1,2,...,m$.
+
+  \textbf{Ex 4}\\
+  If $ u=x^{4}y+y^{2}z^{3}    $, where $ =rse^{t},y=rs^{2}e^{-t}, ~\&~ z=r^{2}s\sin{t}$, find $ \frac{\partial u}{\partial s} $.
+  \[
+      \begin{gathered}
+      \frac{\partial u}{\partial s} = \frac{\partial u}{\partial x}\frac{\partial x}{\partial s}+\frac{\partial u}{\partial y}\frac{\partial y}{\partial s}+\frac{\partial u}{\partial z}\frac{\partial z}{\partial s}\\
+      ~\\
+      \boxed{\frac{\partial u}{\partial s}=(4x^{3} y)(re^{t})+(x^{4}+2yz^{3} )(2rse^{-t})+(3y^{2}z^{2}  )(r^{2}\sin{t})} 
+      \end{gathered}
+  \]
+
+    \textbf{Implicit Differentiation}\\
+    Suppouse an equation of the form $ F(x,y)=0 $ defines $ y $ implicity as a differentiable function of $ x $.
+
+    If $ F $ is differentiable and $ \frac{\partial F}{\partial y} \neq 0 $, then
+    \[
+        \frac{dy}{dx}=-\frac{Fx}{Fy} 
+    \]
+
+    \textbf{Ex 5}
+    Find $ y'$ if $ x^{3}+y^{3}=6xy$, $ F(x,y)=x^{3}+y^{3}-6xy=0 $
+    \[
+        \begin{gathered}
+          F_{x}=3x^{2}-6y \qquad F_{y}=3y^{2}-6x\\
+          ~\\
+          y'=-\frac{3x^{2}-6y}{3y^{2}-6x}=\boxed{- \frac{x^{2}-2y }{y^{2}-2x }}  
+        \end{gathered}
+    \]
+
+    Suppouse $ z $ is given implicitly as $ z=f(x,y)$ by an equation of the form $ F(x,y,z)=0 $. If $ F ~\&~ f $ are differentiable and $ \frac{\partial F}{\partial Z}\neq 0 $, then
+    \[
+        \begin{gathered}
+        \frac{\partial z}{\partial x}= -\frac{\partial F_{x} }{\partial F_{z} } \qquad \frac{\partial z}{\partial y}=-\frac{F_{y} }{F_{z}} 
+        \end{gathered}
+    \]
+
+    \textbf{Ex 6}\\
+    Find $ \frac{dz}{dx}  $ if $ x^{3}+y^{3}+z^{3}+6xzy=1   $
+    \[
+        \begin{gathered}
+        F(x,y,z)=x^{3}+y^{3}+6xy-1=0\\
+        ~\\
+        F_{x}=3x^{2}+6yz \qquad F_{z}=3z^{2}+6xy\\
+        ~\\
+        \frac{dz}{dx}=- \frac{3x^{2}+6yz}{3z^{2}+6xy} = \boxed{- \frac{x^{2+2yz} }{z^{2}+2xy}} 
+        \end{gathered}
+    \]
 \end{document}

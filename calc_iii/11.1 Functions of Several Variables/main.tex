@@ -1,0 +1,51 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{11.1 Functions of Several Variables}
+
+\begin{document}
+    \maketitle
+    \textbf{Definition}\\
+    A function $ f $ of two variables is a rule that assigns to each ordered pair of real numbers $ (x,y) $ in a set $ D $ a unique real number denoted by $ f(x,y) $. The set $ D $ is the domain of $ f $ and its range is the set of values $ f $ takes on, that is
+    \[
+      \{ f(x,y) | (x,y) \in D \} 
+    \]
+
+    At often times, $ z=f(x,y) $ is written to make explicit the value taken on by $ f $ at the general point $ (x,y) $. So $ x ~\&~ y $ are independent variables and $ z $ is the dependent variable.
+
+    A function of two variables is just a function whose domain is a subset of $ \mathbb{R}^{2}  $ and whose range is a subset of $ \mathbb{R} $. If a function $ f $ is given by a formula and no domain is specified, then the domain of $ f $ is the set $ \{ (x,y)|x,y \in \mathbb{R} \} $.
+
+  \textbf{Ex 1}\\
+  Find the domains of the following functions and evaluate $ f(3,2) $.\\
+  A) $ f(x,y)=\frac{\sqrt{x+y+1}}{x-1}$\\
+  B) $ f(x,y) =x\ln(y^{2}-x) $ 
+
+  \textbf{Ex 1A}
+  \[
+      \begin{gathered}
+      f(x,y)=\frac{\sqrt{x+y+1}}{x-1}\\
+      ~\\
+      f(3,2)=\frac{\sqrt{6}}{2}\\
+      ~\\ 
+      D=\{ (x,y) | x+y+1\ge 0,x \neq 1\}
+      \end{gathered}
+  \]
+
+  \textbf{Ex 1B}
+  \[
+      \begin{gathered}
+      f(x,y)=x\ln(y^{2}-x)\\
+      ~\\
+      f(3,2)=0\\
+      ~\\
+      D=\{ (x,y)|y^{2}-x>0\}
+      \end{gathered}
+  \]
+
+  \textbf{Ex 2}\\
+  Find the domain and range of $ g(x,y)=\sqrt{9-x^{2}-y^{2}}$.
+  \[
+      D=\{ (x,y)|9-x^{2}-y^{2}\ge0\} \qquad R=\{ z|z=\sqrt{9-x^{2} -y^{2} },(x,y) \in D \}
+  \]
+  
+    
+\end{document}

@@ -1,9 +1,70 @@
-\textbf{The Invertible Matrix Theorem}\\
-Let $ A $ be a square $ n \times n $ matrix. Then the following statements are equivalent. That is, for a given $ A $, the statements are either all true or all false.
+\documentclass{article}
+\input{../cfg/preamble}
+\title{2.3 Characterizations of Invertible Matrices}
 
-A) $ A $ is an invertible matrix.\\
-B) $ A $ is row equivalent to the $ n \times n $ identity matrix.\\
-C) $ A $ has $ n $ pivot positions.\\
-D) The equation $ Ax=0 $ has only the trivial solution.\\
-E) The columns of $ A $ form a linearly independent set.\\
-F) The linear transformations $ x |\to Ax $ is one-to-one.  
+\begin{document}
+    \maketitle
+    \textbf{The Invertible Matrix Theorem}\\
+    Let $ A $ be a square $ n \times n $ matrix. Then the following statements are equivalent. That is, for a given $ A $, the statements are either all true or all false.
+
+    a) $ A $ is an invertible matrix.\\
+    b) $ A $ is row equivalent to the $ n \times n $ identity matrix.\\
+    c) $ A $ has $ n $ pivot positions.\\
+    d) The equation $ Ax=0 $ has only the trivial solution.\\
+    e) The columns of $ A $ form a linearly independent set.\\
+    f) The linear transformations $ x \mapsto Ax $ is one-to-one..\\
+    g) The equation $ Ax=b $ has at least one solution for each $ b $ in $ \mathbb{R}^{n}  $.\\
+    h) The columns of $ A $ span $ \mathbb{R}^{n}  $.\\
+    i) The linear transformation $ x \mapsto Ax $ maps $ \mathbb{R}^{n}  $ onto $ \mathbb{R}^{n}  $.\\
+    j) There is an $ n \times n $ matrix $ C $ such that $ CA=I $.\\
+    k) There is an $ n \times n $ matrix $ D $ such that $ AD=I $.\\
+    l) $ A^{T}  $ is an invertible matrix.
+
+    $ (a) \implies (j) \implies (d) \implies (c) \implies (b) \implies (a) $, this would mean if any of these five statements hold true, so do the rest of them. Then the remaining statements of the Invertible Matrix Theorem will also hold true.
+
+    \textbf{Ex 1}\\
+    Use the Invertible Matrix Theorem to decide if $ A $ is invertible
+    \[
+        \begin{gathered}
+        A = \begin{bmatrix}
+            1 &0 &-2\\
+            3 &1 &-2\\
+            -5 &-1 &9
+        \end{bmatrix}\to 
+        \begin{bmatrix}
+            1 &0 &-2\\
+            0 &1 &4\\
+            0 &0 &3
+        \end{bmatrix}
+        \end{gathered}
+    \]
+    Since $ A $ has three pivot positions while being a $ 3 \times 3 $ matrix, then the matrix $ A $ is invertible, by statement $ (c) $ of the Invertible Matrix Theorem.
+
+    \textbf{Invertible Linear Transformations}\\
+    When a matrix $ A $ is invertible, the equation $ A^{-1}Ax =x $  can be viewed as a statement about linear transformations.
+
+    A linear transformation $ T:\mathbb{R}^{n}\to \mathbb{R}^{n} $ is said to be invertible if there exists a function $ S:\mathbb{R}^{n} \to \mathbb{R}^{n} $ such that
+    \[
+        \begin{gathered}
+          S(T(x))=x \qquad \forall x \in \mathbb{R}^{n}\\
+          T(S(x))=x \qquad \forall x \in \mathbb{R}^{n}  
+        \end{gathered}
+    \]
+
+    The next theorem shows that if such an $ S $ exists, it is unique and must be a linear transformation. We call $ S $ the inverse of $ T $ and write it as $ T^{-1}  $ .
+
+    \textbf{Theorem 9}\\
+    Let $ T:\mathbb{R}^{n} \to \mathbb{R}^{n} $ be a linear transformation and let $ A $ be the standard matrix for $ T. $ Then $ T $ is invertible if and only if $ A $ is an invertible matrix. In that case, the linear transformation given by $ S(x) =A^{-1x} =A^{-1} x$ is the unique function the equations
+    \[
+        \begin{gathered}
+        S(T(x))=x \qquad \forall x \in \mathbb{R}^{n}\\
+        T(S(x))=x \qquad \forall x \in \mathbb{R}^{n}  
+        \end{gathered}
+    \]
+
+    \textbf{Ex 2}\\
+    What can you say about a one-to-one linear transformation $ T $ from $ \mathbb{R}^{N} $ into $ \mathbb{R}^{n}  $?
+
+    The columns of the standard matrix of $ A $ of $ T $ are linearly independent. So $ A $ is invertible, then by the Invertible Matrix Theorem and $ T $ maps $ \mathbb{R}^{n}  $ onto $ \mathbb{R}^{n}  $. Also by Theorem 9, then $ T $ is invertible.  
+    
+\end{document}
