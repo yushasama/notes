@@ -68,13 +68,13 @@
       \end{bmatrix}
   \]
 
-  Thus $ C=A^{-1}  $ 
+  Thus $ C=A^{-1}  $, then in the context of the definition $ AC =I ~\&~ CA=I,C$ is the inverted matrix $ A^{-1}$.   
   
   \textbf{Theorem 4}\\
   $ A = \begin{bmatrix}
       a &b\\
       c &d
-  \end{bmatrix} $. If $ ad-bc \neq 0$, then $ A $ is invertible and
+  \end{bmatrix} $. If the determinant $ |A|, ad-bc \neq 0$, then $ A $ is invertible and
   \[
       A^{-1}=\frac{1}{ad-bc} \begin{bmatrix}
           d &-b\\
@@ -91,7 +91,7 @@
   \end{bmatrix} $
   \[
       \begin{gathered}
-        text{det}A=3(6)-4(5)=-2\\
+        |A|=3(6)-4(5)=-2\\
         ~\\
       A^{-1} = -\frac{1}{2}\begin{bmatrix}
           6 &-4\\
@@ -104,9 +104,14 @@
       \end{gathered}
   \]
   
-  \textbf{Theorem}\\
-  If $ A $ is an invertible $ n \times n $ matrix, then for each $ b $ in $ \mathbb{R}^{n}$, the equation $ Ax=b $ has the unique solution $ x=A^{-1}b$.     
-  
+  \textbf{Theorem 5}\\
+  If $ A $ is an invertible $ n \times n $ matrix, then for each $ b $ in $ \mathbb{R}^{n}$, the equation $ Ax=b $ has the unique solution $ x=A^{-1}b$.
+  \[
+    \begin{gathered}
+      Ax=b \\ A^{-1}Ax = A^{-1}b \\ x=A^{-1}b
+    \end{gathered}
+  \]
+  based on the fact that $ A^{-1}Ax =Ix = x$.
 
   \textbf{Ex 4}\\
   Use the inverse of the matrix $ A $ to solve the system
@@ -135,40 +140,56 @@
       \end{gathered}
   \]
   
-  \textbf{Theorem}\\
+  \textbf{Theorem 6}\\
   A) If $ A $ is an invertible matrix, then $ A^{-1}$ is invertible and
   \[
     (A^{-1})^{-1}=A 
   \]
-
-  B) If $ A ~\&~ B $ are $ n \times n $ invertible matrices, then so is $ AB $, and the inverse of $ AB $ is the product of the inverses is the product of the inverses $ A ~\&~ B $ in the reverse order.
+  B) If $ A ~\&~ B $ are $ n \times n $ invertible matrices, then so is $ AB $, and the inverse of $ AB $ is the product of $ A ~\&~ B $ in the reverse order.
   \[
     (AB)^{-1}=B^{-1}A^{-1}   
   \]
-  
-  C) If $ A $  is an invertible matrix, then so is $ A^{t}  $, and the inverse of $ A^{t}  $ is the transpose of $ A^{-1}  $.
+  C) If $ A $  is an invertible matrix, then so is $ A^{T}  $, and the inverse of $ A^{T}  $ is the transpose of $ A^{-1}  $.
   \[
     (A^{T} )^{-1}=(A^{-1})^{T} 
   \]
 
-  \textbf{Theorem}\\
-  An $ n \times jn $ matrix $ A $ is invertible if and only if $ A $ is row equivalent to $ I_{n}  $, and in this case, any sequence of elementary row operations that reduces $ A \to I_{n} $, also transforms $ I_{n}\to A^{-1}   $. 
+  \textbf{Theorem 7}\\
+  An $ n \times n $ matrix $ A $ is invertible if and only if $ A $ is row equivalent to $ I_{n}  $, and in this case, any sequence of elementary row operations that reduces $ A \to I_{n} $, also transforms $ I_{n}\to A^{-1} $.
   
-  
-  
-  
-  
-  
+  Recall that the inverse of $ A $ is $ A^{-1}  $  such that $ AA^{-1}=A^{-1}A=I$.
 
-  Recall that the inverse of $ A $ is $ A^{-1}  $  such that $ AA^{-1}=A^{-1}A=I   $
-
-  \textbf{Ex 2}\\
-  Let $ A = \begin{bmatrix}
-      a &b\\
-      c &d
-  \end{bmatrix} $. Then $ A^{-1} = \frac{1}{ad-bc}  \begin{bmatrix}
-      d &-b\\
-      -c &a
+  \textbf{An Algorithm for Finding $ A^{-1} $ }\\
+  By placing $ A ~\&~ I $ side by side to form an augmented matrix $ \begin{bmatrix}
+    A &I
+  \end{bmatrix} $, then row operations on this matrix will be applied to both $ A ~\&~ I $. Then according to Theorem 7, this means that there are row operations that transforms $ A \to I_{n} $ \&$ I_{n} \to A^{-1} $ or else $ A $ is not an invertible matrix.     
+  
+  \textbf{Ex 7}\\
+  Find the inverse of the matrix $ A = \begin{bmatrix}
+    0 &1 &2\\
+    1 &0 &3\\
+    4 &-3 &8
   \end{bmatrix} $ 
-  
+  \[
+    \begin{gathered}
+    A I = \begin{bmatrix}
+      0 &1 &2 &1 &0 &0\\
+      1 &0 &3 &0 &1 &0\\
+      4 &-3 &8 &0 &0 &1
+    \end{bmatrix} \to
+    \begin{bmatrix}
+      1 &0 &0 &-\frac{9}{2} &7 &-\frac{3}{2}\\
+      0 &1 &0 &-2 &4 &-1\\
+      0 &0 &1 &\frac{3}{2} &-2 &\frac{1}{2}  
+    \end{bmatrix}
+    \end{gathered}
+  \]
+  Since $ A\to I_{n} $, then $ A $ is invertible, giving us
+  \[
+    A^{-1} = \begin{bmatrix}
+      \frac{-9}{2} &7 &-\frac{3}{2} \\
+      -2 &4 &-1\\
+      \frac{3}{2} &-2 &\frac{1}{2} 
+    \end{bmatrix} 
+  \]
 \end{document}
