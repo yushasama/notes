@@ -1,0 +1,45 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{Limits and Continuity}
+
+\begin{document}
+  \maketitle
+  \textbf{Introduction}\\
+  The limit of multi-variable functions is similar to the limit of a functin of a single variable.
+  \[
+    \lim_{(x,y)\to(a,b)}f(x,y)=L 
+  \]
+  This notation indicates that the values of $ f(x,y) $ approach the number $ L $ as the point $ (x,y) $ approaches $ (a,b) $ along any path that is within the domain of $ f $.
+  
+ \textbf{Ex 1}\\
+ Show that $ \lim_{(x,y)\to(0,0)}\frac{x^{2}-y^{2}}{x^{2}+y^{2}}$ does not exist.
+ \[
+   \begin{gathered}
+   \lim_{(x,y)\to(x,0)} \frac{x^{2}-y^{2}}{x^{2}+y^{2}} =\frac{x^{2}}{x^{2}} \qquad \lim_{(x,y)\to(0,y)}=\frac{-y^{2}}{y^{2}}= \frac{-y^{2}}{y^{2}}=-1\\
+   ~\\
+   \lim_{(x,y)\to(x,0)} \frac{x^{2}-y^{2}}{x^{2}+y^{2}}\neq \lim_{(x,y)\to(x,0)} \frac{x^{2}-y^{2}}{x^{2}+y^{2}}   
+   \end{gathered}
+ \]
+ Since $ f $ has two different limits along two different lines, the given limit does not exist.
+
+ \textbf{Ex 2}\\
+ If $ f(x,y)  = \frac{xy}{x^{2}+y^{2}  }$, does $ \lim_{(x,y)\to(0,0)} f(x,y) $ exist?
+
+ If $ y=0 $, then $ f(x,0)=\frac{0}{x^{2} } =0 $. Therefore $ f(x,y)\to 0$ as $ (x,y)\to(0,0) $ along the $ x $ axis. If $ x=0 $, then $ f(0,y)=\frac{0}{y^{2} } =0 $. Therefore $ f(x,y)\to 0$ as $ (x,y)\to(0,0) $ along the $ y $ axis.     
+ \[
+   \begin{gathered}
+   \lim_{(x,y)\to x,0} \frac{xy}{x^{2}+y^{2}}=\frac{0}{x^{2}} = 0 \qquad \lim_{(x,y)\to 0,y} \frac{xy}{x^{2}+y^{2}}=\frac{0}{y^{2} }=0\\
+   ~\\
+   \lim_{(x,y)\to x,0} \frac{xy}{x^{2}+y^{2}} \neq  \lim_{(x,y)\to 0,y} \frac{xy}{x^{2}+y^{2}}  
+   \end{gathered}
+ \]
+ Although $ f $ have identical limits along two different lines, we have still yet to show that the given limit is $ 0 $. Let's approach $ (0,0) $ along another line such as $ y=x, x=\neq0 $.
+ \[
+   \begin{gathered}
+   \lim_{(x,y)\to x,x} \frac{xy}{x^{2}+y^{2}} =\frac{x^{2}}{2x^{2}}=\frac{1}{2}\\
+   ~\\
+  \boxed{\therefore f(x,y)\to\frac{1}{2} \text{ as } (x,y)\to(0,0) \text{ along }y=x}
+   \end{gathered}
+ \]
+ 
+\end{document}
