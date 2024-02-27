@@ -7,7 +7,7 @@
     $ D_{\vec{u}} f(x_{0},y_{0}  ), \vec{u}$ is a unit vector
 
     \textbf{Def}\\
-    The directional derivative of $ f $ at $ (x_{0},y_{0} ) $ is the direction of a unit vector $ \vec{u}=< a, b > $ is
+    The directional derivative of $ f $ at $ (x_{0},y_{0} ) $ is the direction of a unit vector $ \hat{u}=< a, b > $ is
     \[
         \begin{gathered}
           D_{\vec{u}} f(x_{0},y_{0} ) = \lim_{h \to 0} \frac{f(x_{0}+h_{0},y_{0}+h_{0}-f(x_{0},y_{0}))}{h}  
@@ -27,31 +27,31 @@
     If $ \vec{u} $ makes angle $ \theta $ with the positive $ x- $axis, then $ \vec{u}=\cos{\theta},\sin{\theta} $.
 
     \textbf{Ex 1}\\
-    Find $ D_{\vec{u}}=f(x,y)$ if $ f(x,y) =x^{3}-3xy+4y^{2} ~\&~ \vec{u}$ is the unit vector given by angle $ \theta=\frac{\pi}{6} $. What is $ D_{\vec{u}}f(1,2)$?
+    Find $ D_{\vec{u}}=f(x,y)$ if $ f(x,y) =x^{3}-3xy+4y^{2} ~\&~ \hat{u}$ is the unit vector given by angle $ \theta=\frac{\pi}{6} $. What is $ D_{\vec{u}}f(1,2)$?
     \[
         \begin{gathered}
         a=\cos{\frac{\pi}{6} }=\frac{\sqrt{3}}{2} \qquad b=\sin{\frac{\pi}{6} }=\frac{1}{2} \\
         ~\\
         f_{x}(x,y)=3x^{2}-3y \qquad f_{y}(x,y)=-3x+8y\\
         ~\\
-        \boxed{D_{\vec{u}}f(x,y)=(3x^{2}-3y )\frac{\sqrt{3}}{2}+(-3+8y)\frac{1}{2}}\\
+        \boxed{D_{u}f(x,y)=(3x^{2}-3y )\frac{\sqrt{3}}{2}+(-3+8y)\frac{1}{2}}\\
         ~\\
-        D_{\vec{u}}f(x,y)=(3(1)^{2-3(2)})\frac{\sqrt{3} }{2}+(-3(1)+8(2))\frac{1}{2}\\
+        D_{u}f(x,y)=(3(1)^{2-3(2)})\frac{\sqrt{3} }{2}+(-3(1)+8(2))\frac{1}{2}\\
         ~\\
-        D_{\vec{u}}f(x,y)=-\frac{3\sqrt{3}}{2} +\frac{13}{2}\\
+        D_{u}f(x,y)=-\frac{3\sqrt{3}}{2} +\frac{13}{2}\\
         ~\\
-        \boxed{D_{\vec{u}}f(x,y)=\frac{-3\sqrt{3}+13}{2}}  
+        \boxed{D_{u}f(x,y)=\frac{-3\sqrt{3}+13}{2}}  
         \end{gathered}
     \]
     
     \textbf{The Gradient Vector}
     \[
         \begin{gathered}
-        D_{\vec{u}}=f(x,y)=f_{x}(x,y)a+f_{y}(x,y)b\\
+        D_{u}=f(x,y)=f_{x}(x,y)a+f_{y}(x,y)b\\
         ~\\
         <f_{x}(x,y) ,f_{y}(x,y)> \cdot < a, b > \\
         ~\\
-        D_{\vec{u}}f(x,y)= \nabla f(x,y) \cdot \vec{u} \qquad \nabla f(x,y)=\text{gradient vector of }f
+        D_{u}f(x,y)= \nabla f(x,y) \cdot \hat{u} \qquad \nabla f(x,y)=\text{gradient vector of }f
         \end{gathered}
     \]
 
@@ -65,11 +65,11 @@
         ~\\
         \nabla f(2,-1) = < -4, 8 >\\
         ~\\
-        \vec{u}= \frac{\vec{v}}{| \vec{v} |}= \frac{< 2, 5 > }{\sqrt{29}}\\
+        \hat{u}= \frac{\vec{v}}{| \vec{v} |}= \frac{< 2, 5 > }{\sqrt{29}}\\
         ~\\
-        D_{\vec{u}}f(2,-1)=\nabla f(x,y) \cdot \vec{u}\\
+        D_{u}f(2,-1)=\nabla f(x,y) \cdot \hat{u}\\
         ~\\
-        D_{\vec{u}}f(2,-1)= < -4, 8 > \cdot  < \frac{2}{\sqrt{29} } , \frac{5}{\sqrt{29} }  >\\
+        D_{u}f(2,-1)= < -4, 8 > \cdot  < \frac{2}{\sqrt{29} } , \frac{5}{\sqrt{29} }  >\\
         ~\\
         \boxed{D_{\vec{u}}f(2,-1)=\frac{32}{\sqrt{29}}}     
         \end{gathered}
@@ -81,12 +81,12 @@
         \nabla f(x,y,z)= < f_{x}(x,y,z) , f_{y}(x,y,z) , f_{z}(x,y,z) > 
     \]
 
-    The directional derivative of $ f $ at $ (x_{0},y_{0},z_{0}) $ in the direction of a unit vector $ \vec{u} =< a, b, c > $ is
+    The directional derivative of $ f $ at $ (x_{0},y_{0},z_{0}) $ in the direction of a unit vector $ \hat{u} =< a, b, c > $ is
     \[
-        D_{\vec{u}}f(x_{0},y_{0},z_{0})= \nabla f(x_{0},y_{0},z_{)}) \cdot \vec{u} 
+        D_{u}f(x_{0},y_{0},z_{0})= \nabla f(x_{0},y_{0},z_{)}) \cdot \hat{u} 
     \]
     
-    \textbf{Ex 3A}\\
+    \textbf{Ex 4A}\\
     If $ f(x,y,z) =x\sin{(yz)}$, find $ \nabla f $
     \[
         \begin{gathered}
@@ -96,20 +96,70 @@
         \end{gathered}
     \]
     
-    \textbf{Ex 3B}\\
+    \textbf{Ex 4B}\\
     Find the directional derivative of $ f $ at $ (1,3,0) $ in the direction of $ \vec{v}=< 1, 2, -1 >  $
     \[
         \begin{gathered}
-        \vec{u}=\frac{\vec{v}}{| \vec{v} |}= \frac{< 1, 2, -1 > }{\sqrt{6}}= < \frac{1}{\sqrt{6} } , \frac{2}{\sqrt{6} } , -\frac{1}{\sqrt{6} }  >  \\
+        \hat{u}=\frac{\vec{v}}{| \vec{v} |}= \frac{< 1, 2, -1 > }{\sqrt{6}}= < \frac{1}{\sqrt{6} } , \frac{2}{\sqrt{6} } , -\frac{1}{\sqrt{6} }  >  \\
         ~\\
-        D_{\vec{u}}f(x,y,z)= \nabla f(x,y,z) \cdot \vec{u}\\
+        D_{u}f(x,y,z)= \nabla f(x,y,z) \cdot \hat{u}\\
         ~\\
         D_{\vec{u}}f(x,y,z) = \frac{\sin{(yz)}}{\sqrt{6} } + \frac{2xz\cos{(yz)}}{\sqrt{6} }-\frac{xy\cos{(yz)}}{\sqrt{6}}\\
         ~\\
-        D_{\vec{u}}f(1,3,0) = \frac{\sin{0}}{\sqrt{6} }+ 0 - \frac{3\cos{0}}{\sqrt{6}}\\
+        D_{u}f(1,3,0) = \frac{\sin{0}}{\sqrt{6} }+ 0 - \frac{3\cos{0}}{\sqrt{6}}\\
         ~\\
-        \boxed{D_{\vec{u}}f(1,3,0) =  -\frac{3}{\sqrt{6}}} 
+        \boxed{D_{u}f(1,3,0) =  -\frac{3}{\sqrt{6}}} 
         \end{gathered}
     \]
-    
+
+    \textbf{Maximizing the Directional Derivative}\\
+    Supppouse that we have a multi-variable function $ f $ and we consider all possible directional derivatives of $ f $ at a given point. These give the rate of changes of $ f $ in all possible directions. From there, we can ask the following questions, "In which of these directions does $ f $ change the fastest" and "What is the maximum rate of change?". These questions can be answered by the folllowing theorem.
+
+    \textbf{Theorem 15}\\
+    Suppouse $ f $ is a differentiable function of two or three variables. The maximum value of the directional derivative $ D_{u}f(x)$ is $ |\nabla f(x) | $ (the magnitude of $ \nabla f(x) $ ) and it occurs when $ u $ has the same direction as the gradient vector $ \nabla f(x) $.
+
+    \textbf{Ex 5A}\\
+    If $ f(x,y) =xe^{y} $, find the rate of change of $ f $ at the point $ P(2,0) $ in the direction from $ P $ to $ Q(\frac{1}{2} ,2) $.
+    \[
+        \begin{gathered}
+        \nabla f(x,y)=< f_{x} , f_{y} >=< e^{y} , xe^{y}  > \\
+        ~\\
+        \nabla (2,0)=< 1, 2 > \\
+        u=\vec{PQ}=< -1.5, 2 >, \hat{u}=< -\frac{3}{5} ,\frac{4}{5}>\\
+        ~\\
+        D_{\hat{u}}=\nabla f(2,0) \cdot \hat{u}\\
+        ~\\
+        D_{\hat{u}} = < 1, 2 > \cdot < -\frac{3}{5} , \frac{4}{5}  > \\
+        ~\\
+      \boxed{D_{\hat{u}}=1}  
+        \end{gathered}
+    \]
+
+    \textbf{Ex 5B}\\
+    According to Theorem 15, $ f $ increases fastest in the direction of the gradient vector $ \nabla f(2,0)=< 1, 2 >  $. The maximum rate of change is
+    \[
+        | \nabla f(2,0) | = | < 1, 2 >  | = \boxed{\sqrt{5}}
+    \]
+
+    \textbf{Ex 6}\\
+    Suppouse that the temperature at a point $ (x,y,z) $ in space is given by $ T(x,y,z) = \frac{80}{1+x^{2}+2y^{2}+3z^{2}} $, where $ T $ is measured in degrees Celsius and $ x,y, z $ in meters. In which direction does the temperature increase fastest at the point $ (1,1,-2) $? What is the maximum rate of increase? 
+    \[
+        \begin{gathered}
+        \nabla T = \frac{\partial T}{\partial x}i + \frac{\partial T}{\partial y}j + \frac{\partial T}{\partial z}k\\
+        ~\\
+        \nabla T = - \frac{160x}{(1+x^{2}+2y^{2}+3z^{2})^{2}}i+\frac{320y}{(1+x^{2}+2y^{2}+3z^{2})^{2}}-\frac{480z}{(1+x^{2}+2y^{2}+3z^{2})^{2}}\\
+        ~\\
+        \nabla T=\frac{160}{(1+x^{2}+2y^{2}+3z^{2})^{2}}(-xi+2yj-3zk)\\
+        \end{gathered}
+    \]
+    At the point $(1,1,-2) $ the gradient vector is
+    \[
+        \begin{gathered}
+        \nabla T(1,1,-2)=\frac{160}{256}(-i-2j+6k)=\frac{5}{8}(-i-2j+6k)\\
+        ~\\
+        u = -i-2j+6k, \hat{u}=\frac{-1,-2,6}{\sqrt{41} }\\
+        ~\\
+        | \nabla T(1,1,-2) | = \frac{5}{8} | < -\frac{1}{\sqrt{41} } , -\frac{2}{\sqrt{41} } ,  \frac{6}{\sqrt{41} } > |=  
+        \end{gathered}
+    \]
 \end{document}
