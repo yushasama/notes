@@ -1,0 +1,319 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{2.8 Subspaces of $ \mathbb{R}^{n}  $ }
+
+\begin{document}
+  \maketitle
+  \textbf{Def}\\
+  A subspace of $ \mathbb{R}^{n}  $ is any set $ H $ in $ \mathbb{R}^{n}$ that has the three properties:\\
+  a) The zero vector is in $ H $.\\
+  b) For each $ u ~\&~ v$ in $ H $, the sum $ u+v $ is in $ H $.\\
+  c) For each $ u $ in $ H $ and each scalar $ c $, the vector $ cu $ is in $ H $.
+
+  A subspace is closed under addition and scalar multiplication.
+
+  \textbf{Ex 1}\\
+  If $ v_1 ~\&~ v_2$ are in $ \mathbb{R}^{n} ~\&~ H= \text{Span$ \{ v_1,v_2\} $ } $, then $ H $ is a subspace of $ \mathbb{R}^{n}  $. TO verify this statement, note that the zero vector is in $ H $ because $ 0v_1 +0v_2$ is a linear combination of $ v_1 ~\&~ v_2 $. Take two arbitrary vectors in $ H $, like so
+  \[
+    \begin{gathered}
+    u=s_1v_1+s_2v_2 ~ \qquad v=t_1v_1+t_2v_2\\
+    ~\\
+    u+v=(s_1+t_1)v_1+(s_2+t_2)v_2
+    \end{gathered}
+  \]
+  Which shows that $ u+v $ is a li near combination of $ v_1 ~\&~ v_2 $ and hence is in $ H $. Also note that for any scalar $ c $, the vector $ cu $ is in $ H $, because $ cu=c(s_1v_1+s_2v_2)=(cs_1)v_1 +(cs_2)v_2$.
+
+  If $ v_1 $ is not zero and if $ v_2 $ is a multiple of $ v_1 $, then $ v_1 ~\&~ v_2$simply span a line through the origin. So a line through the origin is another example of a subspace.
+
+  \textbf{Ex 2}\\
+  A line not through the origin is not a subspace as it does not contain the origin as show in figure below.
+
+  \textbf{Column Space and Null Space of a Matrix}\\
+  Subspaces of $ \mathbb{R}^{n}  $ usually occur in applications and theory in one of two ways. In both cases, the subspace can be related to a matrix.
+
+  \textbf{Definition}\\
+  The column space of a matrix $ A $ is the set Col $ A $ of all linear combinations of the columns of $ A $.
+
+  If $ A = \begin{bmatrix} a_1 &... &a_n \end{bmatrix} $, with the columns in $ \mathbb{R}^{m} $. The example below shows that the column space of an $ m \times n $ matrix is a subspace of $ \mathbb{R}^{m} $. Note that Col $ A = \mathbb{R}^{m} $ only when the columns of $ A $ span $ \mathbb{R}^{m} $. Otherwise Col $ A $  is only part of $ \mathbb{R}^{m} $
+
+  \textbf{Ex 4}\\
+  Determine whether $ b $ is in the column space of $ A $.
+  \[
+    \begin{gathered}
+    A = \begin{bmatrix}
+      1 &-3 &-4\\
+      -4 &6 &-2\\
+      -3 &7 &6
+    \end{bmatrix},~ B=
+    \begin{bmatrix}
+      3\\
+      3\\
+      -4
+    \end{bmatrix}\\
+    ~\\
+    \begin{bmatrix}
+      1 &-3 &-4 &3\\
+      -4 &6 &-2 &3\\
+      -3 &7 &6 &-4
+    \end{bmatrix} \to
+    \begin{bmatrix}
+      1 &-3 &-4 &3\\
+      0 &-6 &-18 &15\\
+      0 &0 &0 &0
+    \end{bmatrix}
+    \end{gathered}
+  \]
+  
+  The vector $ b $ is a linear combination of the columns of $ A $ if and only if the equation $ Ax=b $ has a solution. Upon row reducing the augmented matrix $ \begin{bmatrix}
+    A &b
+  \end{bmatrix} $, we can say that $ Ax=b $ is consistent and that $ b $ is indeed is in Col $ A $.
+
+  \textbf{Def}\\
+  The null space of a matrix $ A $ is the set Nul $ A $ of all solutions of the homogeneous equation $ Ax=0 $. 
+
+  When $ A $ contains $ n $ columns, the solutions to $ Ax=0 $ belong to $ \mathbb{R}^{n}  $ and so the null space of $ A $ is a subset of $ \mathbb{R}^{n} $. In fact Nul $ A $ has the properties of a subspace of $ \mathbb{R}^{n} $.
+
+  \textbf{Theorem 12}\\
+  The null space of an $ m \times n $ matrix $ A $ is a subspace of $ \mathbb{R}^{n} $. Equivalently, the set of all solutions of a system $ Ax=0 $ of $ m $ homogeneous linear equations in $ n $ unknowns is a subspace of $ \mathbb{R}^{n}  $.
+
+  \textbf{Basis for a Subspace}\\
+  Because a subspace will typically contain an infinite number of vectors, some problems involving a subspace are handled best by working with a small finite set of vectors that span the subspace. The smaller the set, the better.
+
+  \textbf{Def}\\
+  A basis for a subspace $ H $ of $ \mathbb{R}^{n} $ is a linearly independent set that spans $ H $.
+
+  \textbf{Ex 5}\\
+  The columns of an invertible $ n \times n $ matrix form a basis for all of $ \mathbb{R}^{n} $ because they are linearly independent and span $ \mathbb{R}^{n} $ by the Invertible Matrix Theorem. An example would be the $ n \times n $ identity matrix. Its columns are denoted by $ e_1,...,e_n $
+  \[
+    e_1 = \begin{bmatrix}
+      1\\
+      0\\
+      .\\
+      .\\
+      .\\
+      0
+    \end{bmatrix},
+    e_2 = \begin{bmatrix}
+      0\\
+      1\\
+      .\\
+      .\\
+      .\\
+      0
+    \end{bmatrix}, ...,
+    e_n = \begin{bmatrix}
+      0\\
+      0\\
+      .\\
+      .\\
+      .\\
+      n
+    \end{bmatrix}
+  \]
+
+  The set $ \{ e_1,...,e_2 \} $ is called the standard basis for $ \mathbb{R}^{n} $.
+
+  The next example will show the standard procedure ofr writing the solution set of $ Ax=0 $ in parametric vector form actually identifies a basis for Nul $ A $.
+
+  \textbf{Ex 6}\\
+  Find a basis for the null space of the matrix
+  \[
+    A = \begin{bmatrix}
+      -3 &6 &-1 &1 &-7\\
+      1 &-2 &2 &3 &-1\\
+      2 &-4 &5 &8 &-4
+    \end{bmatrix}
+  \]
+  First write the solution of $ Ax=0 $ in parametric vector form.
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      -3 &6 &-1 &1 &-7 &0\\
+      1 &-2 &2 &3 &-1 &0\\
+      2 &-4 &5 &8 &-4 &0
+    \end{bmatrix} \to
+    \begin{bmatrix}
+      1 &-2 &0 &-1 &3 &0\\
+      0 &0 &1 &2 &-2 &0\\
+      0 &0 &0 &0 &0 &0
+    \end{bmatrix}\\
+    ~\\
+    x_1-2x_2 \qquad -x_4 +3x_5=0\\
+    \qquad \qquad x_3 + 2x_4 -2x_5=0\\
+    \qquad \qquad \qquad \qquad \qquad 0=0\\
+    ~\\
+    \begin{cases}
+      x_1=2x_2+x_4-3x_5\\
+      x_2=\text{free}\\
+      x_3=-2x_4+2x_5\\
+      x_4=\text{free}\\
+      x_5=\text{free}
+    \end{cases} \to 
+    \begin{bmatrix}
+      x_1\\
+      x_2\\
+      x_3\\
+      x_4\\
+      x_5
+    \end{bmatrix} = 
+    \begin{bmatrix}
+      2x_2+x_4-3x_5\\
+      x_2\\
+      -2x_4+2x_5\\
+      x_4\\
+      x_5
+    \end{bmatrix} \to
+    x_2\begin{bmatrix}
+      2\\
+      1\\
+      0\\
+      0\\
+      0
+    \end{bmatrix} +
+    x_4\begin{bmatrix}
+      1\\
+      0\\
+      -2\\
+      1\\
+      0
+    \end{bmatrix} +
+    x_5\begin{bmatrix}
+      -3\\
+      0\\
+      2\\
+      0\\
+      1
+    \end{bmatrix}\\
+    ~\\
+    u=\begin{bmatrix}
+      2\\
+      1\\
+      0\\
+      0\\
+      0
+    \end{bmatrix},
+    v=\begin{bmatrix}
+      1\\
+      0\\
+      -2\\
+      1\\
+      0
+    \end{bmatrix},
+    w=\begin{bmatrix}
+      -3\\
+      0\\
+      2\\
+      0\\
+      1
+    \end{bmatrix}\\
+    ~\\
+    \boxed{x_2u+x_4v+x_5w}
+    \end{gathered}
+  \]
+
+  \textbf{Ex 7}\\
+  Find a basis for the column space of the matrix
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      1 &0 &-3 &5 &0\\
+      0 &1 &2 &-1 &0\\
+      0 &0 &0 &0 &1\\
+      0 &0 &0 &0 &0
+    \end{bmatrix}
+    \end{gathered}
+  \]
+  Denote the columns of $ B $ by $ b_1,...,b_n $ and note that $ v_3=-3b_1+2b_2 ~\&~ b_4=5b_1-b_2$. The fact that $ b_3 ~\&~ b_4$ are combinations of the pivot columns means that any combination of $ b_1,...,b_5 $ is actually a combination of just $ b_1,b_2,~\&~ b_5 $. If $ v $ is any vector in col $ B $,
+  \[
+    v=c_1b_1+c_2b_2+c_3b_3+c_4b_4+c_5b_5
+  \]
+  By substituting for $ b_3 ~\&~ b_4 $, $ v $ can be written in the form
+  \[
+    v=c_1b_1=c_2b_2+c_3(-3b_1+2b_2)+c_4(5b_1-1b_2)+c_5b_5
+  \]
+  The equation $ v $ is a linear combination of $ b_1,b_2 ~\&~ b_5 $. So $ \{ b_1,b_2,b_5 \} $ spans Col $ B $. $ b_1,b_2 ~\&~ b_5 $ are also linearly independent because they are columns from an identity matrix. So the pivot columns of $ B $ form a basis for Col $ B $.
+  \[
+    \begin{gathered}
+    \{ b_1 ,b_2,b_5 \} \text{ spans Col } B\\
+    ~\\
+    B= \begin{bmatrix}
+      1 &0 &-3 &5 &0\\
+      0 &1 &2 &-1 &0\\
+      0 &0 &0 &0 &0 &1\\
+      0 &0 &0 &0 &0
+    \end{bmatrix} \qquad
+    b_1 = \begin{bmatrix}
+      1\\
+      0\\
+      0\\
+      0
+    \end{bmatrix}, b_2=
+    \begin{bmatrix}
+      0\\
+      1\\
+      0\\
+      0
+    \end{bmatrix}, b_5=
+    \begin{bmatrix}
+      0\\
+      0\\
+      1\\
+      0
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  Linear dependence relations among the columns of a general matrix $ A $ can be expressed in the form $ Ax=0 $ for some $ x $. If some columns are not involved in a dependence relation, then the corresponding entries in $ x $ are zero. 
+
+  Though when $ A $ is row reduced to echelon form $ B $, the columns are changed but the equations $ Ax=0 ~\&~ Bx=0 $ still have the same set of solutions. That is the columns of $ A $ have exactly the same linear dependence relationships as the columns of $ B $.
+
+  \textbf{Ex 8}\\
+  It can be verified that the matrix
+  \[
+    A=\begin{bmatrix}
+      a_1 &a_2 &a_5
+    \end{bmatrix} = 
+    \begin{bmatrix}
+      1 &3 &3 &2 &-9\\
+      -2 &-2 &2 &-8 &2\\
+      2 &3 &0 &7 &1\\
+      3 &4 &-1 &11 &-8
+    \end{bmatrix}
+  \]
+
+  is row equivalent to the matrix to the matrix $ B $ in Example 7. Find a basis for Col $ A $. Since row operations do not affect linear dependence relations, we should have
+  \[
+    b_3 =-3b_1 + 2a_2 \to a_3 = -3a_1 + 2a_2 \qquad b_4 =5b_1-b_1=a_4=5a_1-a_2
+  \]
+
+  \textbf{Theorem 13}\\
+  The pivot columns of a matrix $ A $ form a basis for the column space of $ A $. 
+
+  Note that the columns of an echelon form $ B $ are often not in the column space of $ A $. Hence be careful to use pivot columns of $ A $ itself for the basis for Col $ A $.
+
+  \textbf{Determining if A Vector is in Nul $ A $ }\\
+  Given an arbitrary matrix $ A $ and vector $ \vec{u} $, determine if $ \vec{u} $ is in Nul $ A $. Recall that Nul $ A $ is the set of all solutions of the homogeneous equation $ Ax=0 $. Meaning that if $ \vec{u} $ is indeed in Nul $ A $, $ \vec{u} $ must be a solution to the homogeneous equation $ Ax=0 $.
+
+  Given a matrix $ A $ of size $ 3 \times 3 $ and a vector $ u $ in $ \mathbb{R}^{3}  $      
+  \[
+    \begin{gathered}
+      \vec{u} = \begin{bmatrix}
+        c_1\\
+        c_2\\
+        c_3
+      \end{bmatrix} \qquad
+    Ax=0 \to A \vec{u} = 0\\
+    A \begin{bmatrix}
+      c_1\\
+      c_2\\
+      c_3
+    \end{bmatrix} = \begin{bmatrix}
+      0\\
+      0\\
+      0
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+
+\end{document}
