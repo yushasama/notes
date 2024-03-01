@@ -3,5 +3,125 @@
 \title{12.1 Double Integrals Over Rectangles}
 
 \begin{document}
-    \maketitle
+  \maketitle
+  \textbf{Introduction}\\
+  In the same manner that integrating single variable functions, we obtained the area. We will be computing double integrals to find the volume of a solid.
+
+  \textbf{Review of the Definite Integral}\\
+  If $ f(x) $ is defined for $ a \le x\le b $, we start by dividing the interval $ [a,b] $ into $ n $ subintervals $ [x_{i-1},x_{i} ] $ with length $ \Delta x_{i}=x_{i}-x_{i-1} $ and choosing sample points $ x_{i}^{*} $ in these subintervals, visualized by the figure below.
+  \begin{center}
+    \includegraphics[width=6cm]{12_1_1}
+  \end{center}
+
+  The Riemann Sum equation form is obtained
+  \[
+   \sum^{n}_{i=1} f(x_{i}^{*}) \Delta x_{i} 
+  \]
+  Then by taking the limit of such sums as the largest of the lengths approach 0 to obtain the definite integral of $ f $ from $ a \to b $
+  \[
+    \int^{b}_{a} f(x)~dx=\lim_{\text{max}\Delta x_{i} \to 0} \sum^{n}_{i=1} f(x_{i}^{*})\Delta x_{i}
+  \]
+
+  In the special case where $ f(x) \ge 0$, the Riemann sum can be intepreted as the sum of the areas of the approximating rectangles. Meaning that $ \int^{b}_{a} f(x)~dx $ represents the area under the curve $ y=f(x) $ from $ a\to b $. 
+
+  \textbf{Volumes and Double Integrals}\\
+  Then in a similar manner, a function $ f $ of two variables defined on a closed rectangle
+  \[
+    R=[a,b] \times [c,d] = \{ (x,y) \in \mathbb{R}^{2} | a \le x \le b,c \le y \le d \}
+  \]
+  And by suppousing that $ f(x,y) \ge 0 $. The graph of $ f $ is a surface with equation $ z=f(x,y) $. Let $ S $ be the solid that lies above $ R $ and  under the graph of $ f $ and under the graph of $ f $, that is
+  \[
+    S=\{ (x,y,z) \in \mathbb{R}^{2} | 0 \le z \le f(x,y), (x,y) \in \mathbb{R} \}
+  \]
+  
+  Where our goal is to find the volume of $ S $
+  \begin{center}
+    \includegraphics[width=6cm]{12_1_2}
+  \end{center}
+
+  To do so, we must take a partition $ P $ of $ R $ into sub rectangles. Done by dividing the intervals $ [a,b] ~\&~ [c,d] $.
+  \[
+    \begin{gathered}
+    a = x_0 < x_1 < ... < x_{i-1} < x_i < x_{m} = b
+    c = y_0 < y_1 < ... < y_{i-1} < y_i < y_{n} = d
+    \end{gathered}
+  \]
+
+  By drawing lines parallel to the coordinate axes through these partition points like the figure below
+
+  We form the subrectangles
+  \[
+    R_{ij}= [x_{i-1},x_i] \times [y_{j-1},y_j] = \{ (x,y) | x_{i-1} \le x \le x_{i}, y_{j-1} \le y \le y_j \}
+  \]
+  for $ i=1,...,m ~\&~ j=1,...,n$. There are $ mn $ of these subrectangles and they cover $ R $. By letting $ \Delta x_i = x_i - x_{i-1} ~\&~ \Delta y_j = y_j - y_{j-1}$, then we obtain the equation for the area of $ R_{ij} $
+  \[
+    \Delta A_{ij}= \Delta x_{i} \Delta y_{j}
+  \]
+
+  \begin{center}
+    \includegraphics[width=10cm]{12_1_3}
+  \end{center}
+
+  By choosing a sample point $ (x^{*}_{ij}, y^{*}_{ij}) $ in each $ R_{ij} $, then we can approximate the part of $ S $ that lies above each $ R_{ij} $ by a thin column or rectangular box. This column has base $ R_{ij} ~\&~ $ height $ f(x^{*}_{ij}, y^{*}_{ij}) $ as shown below.  
+
+  \begin{center}
+    \includegraphics[width=10cm]{12_1_4}
+  \end{center}
+
+  The volume of this box is the height of the box times the area of the base rectangle.
+  \[
+    f(x^{*}_{ij},y^{*}_{ij}) \Delta A_{ij}
+  \]
+
+  By following this procedure for all the rectangles and summing up the volumes of the corresponding boxes, we get an approximation to the total volume of $ S $
+  \[
+    V \approx \sum^{m}_{i=1} \sum^{n}_{j=1} f(x^{*}_{ij},y^{*}_{ij}) \Delta A_{ij}
+  \]
+  
+  The intuition behind this double Riemann sum means that for each subrectangle we evaluate $ f $ at the chosen point and multiply by the area of the subtectangle and summing up the results. Visualized by the figure below
+  \begin{center}
+    \includegraphics[width=10cm]{12_1_5}
+  \end{center}
+
+  The smaller the subrectangles become, the better the approximation becomes so we can take the limit of the Riemann sum to obtain
+  \[
+    V = \lim_{\text{max}\Delta x_i, \Delta y_j \to 0}  \sum^{m}_{i=1} \sum^{n}_{j=1} f(x^{*}_{ij},y^{*}_{ij}) \Delta A_{ij}
+  \]
+ 
+  \textbf{Def}
+  The double integral of $ f $ over the rectangle $ R $ is
+  \[
+    \iint_R f(x,y)~ dA = \lim_{\text{max}\Delta x_i, \Delta y_j \to 0}  \sum^{m}_{i=1} \sum^{n}_{j=1} f(x^{*}_{ij},y^{*}_{ij}) \Delta A_{ij}
+  \]
+
+  if this limit exists.
+
+  Now if $ f $ is integrable over $ R $, then the partitions $ P $ are regular, having the same dimensions and therefor the same area, $ \delta A = \Delta x \Delta y $. In this case by letting $ m\to \infty ~\&~ y\to \infty $. The sample point $ x^{*}_{ij},y^{*}_{ij} $ can be any point. However for simplicity sake, the sample point will be the upper right-hand corner of $ R_{ij} $, namely $ (x_i,y_j) $.
+  \[
+    \iint_R f(x,y)~dA = \lim_{m,n \to 0}  \sum^{m}_{i=1} \sum^{n}_{j=1} f(x^{*}_{i},y^{*}_{j}) \Delta A_{}
+  \]
+  
+ By definition, the volume of our solid can be written as a double integral. 
+
+ If $ f(x,y) \le 0$, then the volume $ V $ of the solid that lies above the rectangle $ R $ and below the surface $ z=f(x,y) $ is given by the equation
+ \[
+   V = \iint_R f(x,y)~dA
+ \]
+
+ \textbf{Ex 1}\\
+ Estimate the volume of the solid that lies above the square $ R = [0,2] \ times [0,2] $ and below the elliptic paraboloid $ z=16-x^{2}-2y^{2} $. Divide $ R $ into four equal squares and choose the sample point to be the upper right corner of each square $ R_{ij} $.
+ \[
+   \begin{gathered}
+   V \approx \sum^{2}_{i=1}\sum^{2}_{j=1} f(x_i,y_i) \Delta A\\
+   f(1,1) \Delta A + f(1,2) \Delta + f(2,1) \Delta A + f(2,2) \Delta A\\
+   13(1)+7(1)+10(1)+4(1) = \boxed{34}
+   \end{gathered}
+ \]
+
+ \begin{center}
+   \includegraphics[width=6cm]{12_1_6} \qquad \includegraphics[width=4cm]{12_1_7}
+ \end{center}
+ 
+  
+
 \end{document}
