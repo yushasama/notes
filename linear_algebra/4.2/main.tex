@@ -1,0 +1,122 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{4.2}
+
+\begin{document}
+    \maketitle
+    \textbf{Nul SPaces, Column Spaces, Row Spaces and Linear Transformations}\\
+    Given an $ m \times n $ matrix $ A = (a_{ij} ) $
+    \[
+       \begin{bmatrix}
+         a_{11} &a_{12} &a_{13}\\
+         a_{21} &a_{22} &a_{23}\\
+         a_{31} &a_{32} &a_{33}   
+       \end{bmatrix} 
+    \]
+
+    \textbf{Def}\\
+    Null Space of $ A $ is $ NulA = \{ x \in \mathbb{R}^{n}L Ax=0  \} $. 
+    The Column Space of $ A $ is $ ColA = \text{Span}\{ a_{1},a_{2},...,a_{n}\} $.
+    The Row Space of $ A $ is $ RowA=\text{Span}\{ r_{1},r_{2},...r_{m} \} $.
+    
+    \textbf{Ex 3 }\\
+    Find a spanning set for the null space of the matrix. As in solve $ Ax=0 $ 
+    \[
+       A = \begin{bmatrix}
+            -3 &6 &-1 &1 &-7\\
+            1 &-2 &2 &3 &-1\\
+            2 &-4 &5 &8 &4
+        \end{bmatrix}
+    \]
+
+    Solution, find all $ x $ that satisfies $ Ax=0 $
+    \[
+        \begin{bmatrix}
+            -3 &6 &-1 &1 &-7 &0\\
+            1 &-2 &2 &3 &-1 &0\\
+            2 &-4 &5 &8 &4 &-0
+        \end{bmatrix} \to 
+        \begin{bmatrix}
+            1 &-2 &0 &-1 &3 &0\\
+            0 &0 &1 &2 &-2 &0\\
+            0 &0 &0 &0 &0 &0 
+        \end{bmatrix}
+    \]
+   x must be in $ \mathbb{R}^{n} $
+   \[
+       \begin{gathered}
+       \begin{bmatrix}
+           x_{1}\\
+           x_{2}\\
+           x_{3}\\
+           x_{4}\\
+           x_{5}     
+       \end{bmatrix} = 
+       \begin{bmatrix}
+           2x_{2} + x_{4} - 3x_{5}\\
+           x_{2}\\
+           -2x_{4} + 2x_{5}\\
+           x_{4}\\
+           x_{5}   
+       \end{bmatrix} = 
+       x_{2} \begin{bmatrix}
+           2\\
+           1\\
+           0\\
+           0\\
+           0
+       \end{bmatrix} + x_{4}\begin{bmatrix}
+           1\\
+           0\\
+           -2\\
+           1\\
+           0
+       \end{bmatrix} + x_{5}\begin{bmatrix}
+           -3\\
+           0\\
+           2\\
+           0\\
+           1
+       \end{bmatrix} 
+       \end{gathered}
+   \]
+
+   \textbf{Ex 4}\\
+   let $ w = \{ \begin{bmatrix}
+       6a-b\\
+       a+b\\
+       -7a
+   \end{bmatrix} : a,b \in \mathbb{R} \} $. Find a matrix $ A $, such that $ w= ColA $.
+   \[
+       \begin{gathered}
+       w = \{ \begin{bmatrix}
+           6a-b\\
+           a+b\\
+           -7a
+       \end{bmatrix} :a,b \in \mathbb{R}\} = 
+       \{ a\begin{bmatrix}
+           6\\
+           1\\
+           -7
+       \end{bmatrix} + b\begin{bmatrix}
+           -1\\
+           1\\
+           0
+       \end{bmatrix}: a,b \in \mathbb{R}\} = 
+       \text{Span} \{ \begin{bmatrix}
+           6\\
+           1\\
+           -7
+       \end{bmatrix} + \begin{bmatrix}
+           -1\\
+           1\\
+           0
+       \end{bmatrix}\} = ColA, \text{ where }A=
+       \begin{bmatrix}
+           6 &-1\\
+           1 &1\\
+           -7 &0
+       \end{bmatrix}
+       \end{gathered}
+   \]
+\end{document}
