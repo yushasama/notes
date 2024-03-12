@@ -1,0 +1,58 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{4.1 Vector Spaces and Subspaces}
+
+\begin{document}
+    \maketitle
+    \textbf{Definition}\\
+    a vector space is a nonempty set $ V $ of objects, called vectors, on which are defined two operations, called addition and multiplication by scalars (real numbers), subject to the ten axios below. The axioms must hold for all vectors $ u,v, ~\&~ w $ in $ V $ and for all scalars $ c ~\&~ d $.
+    1) The sum of $ u ~\&~ v $, $ u+v $ is in $ V $.
+    2) $ u + v = v+ u $.
+    3) $ (u+v) + w = u + (v+w) $.
+    4) There is a zero vector $ 0 $ in $ V $ such that $ u + 0 =u $.
+    5) For each $ u $ in $ V $, there is a vector $ -u $ in $ V $ such that $ u+(-u)=0 $. 
+    6) The scalar multiple, denoted by $ cu $, is in $ V $.
+    7) $ c(u+v)=cu+cv $.
+    8) $ (c+d)u=cu=du $.
+    9) $ c(du)=(cd)u $.
+    10) $ 1u=u $ 
+
+    \textbf{Ex 4}\\
+    For $ n \le 0 $, the set $ \mathbb{P}_{n} $ of polynomials of degree at most $ n $ consists of the all polynomials of the form
+    \[
+        p(t)=a_{0}+a_{1}t+a_{2}t^{2}+...+a_{n}t^{n}      
+    \]
+    Where the coefficients $ a_{0},...,a_{n} $ and the variable $ t $ are real numbers. If $ q(t)=b_{0}+b_{1}t+...+b_{n}t^{n} $, then the sum $ p+q $ is defined by
+    \[
+      (p+q)(t)=p(t)+q(t)=(a_{0}+b_{0})t+(a_{1}+b_{1})t+...+(a_{n}+b_{n})t^{n} 
+    \]
+
+    The scalar multiple $ cp $ is the polynomial defined by
+    \[
+      (cp)(t)=cp(t)=ca_{0}+(ca_{1})t+...+(ca_{n})t^{n}  
+    \]
+
+    These definitions satisfy Axioms $ 1 ~\&~ 6 $ because $ p+q ~\&~ cp $ are polynomials of degrees less than or equal to $ n $. We assume the other Axios $ 2,3,~\&~ 7-10 $ follow from the properties of real numbers. The zero polynomial acts as the zero vector in Axiom $ 4 $. $ (-1)p $ acts as the negative of $ p $ so Axiom $ 5 $ is satisfied. Thus $ \mathbb{P}_{n} $ is a vector space.
+
+    \textbf{Subspaces}\\
+    A subspace of a vector space $ V $ is a subset $ H $ of $ V $ that has the three properties
+    a) The zero vector of $ V $ is in $ H^{2} $
+    b) $ H $ is closed under vector addition. Meaning for each $ u+v $ in $ H $, the sum $ u+v $ is in $ H $.
+    c) $ H $ is closed under multiplication by scalars. That is, for each vector $ u $ and each scalar $ c $, the vector $ cu $ is in $ H $.
+
+    If these three vector space axioms hold true, then the other seven axioms from the previous definition are automatically satisfied. So every subspace is a vector space.
+
+    \textbf{Ex 9}\\
+    The vector space $ \mathbb{R}^{2} $ is not a subspace of $ \mathbb{R}^{3} $ because $ \mathbb{R}^{2} $ is not even a subset of $ \mathbb{R}^{3} $. As the vectors in $ \mathbb{R}^{3} $ all have three entries, where as the vectors in $ \mathbb{R}^{2} $ have only two.
+
+    The set
+    \[
+      H=\{ \begin{bmatrix}
+          s\\
+          t\\
+          0
+      \end{bmatrix}: s,t \in \mathbb{R} \}
+    \]
+    is a subset of $ \mathbb{R}^{3} $ that looks and acts like $ \mathbb{R}^{2} $, although it is distint from $ \mathbb{R}^{2}  $. Show that $ H $ is a subspace of $ \mathbb{R}^{3} $. 
+    
+\end{document}
