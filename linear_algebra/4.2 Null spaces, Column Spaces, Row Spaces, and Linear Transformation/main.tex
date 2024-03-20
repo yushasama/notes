@@ -1,0 +1,219 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{4.2}
+
+\begin{document}
+    \maketitle
+    \textbf{Nul SPaces, Column Spaces, Row Spaces and Linear Transformations}\\
+    Given an $ m \times n $ matrix $ A = (a_{ij} ) $
+    \[
+       \begin{bmatrix}
+         a_{11} &a_{12} &a_{13}\\
+         a_{21} &a_{22} &a_{23}\\
+         a_{31} &a_{32} &a_{33}   
+       \end{bmatrix} 
+    \]
+
+    \textbf{Def}\\
+    Null Space of $ A $ is $ NulA = \{ x \in \mathbb{R}^{n}L Ax=0  \} $. 
+    The Column Space of $ A $ is $ ColA = \text{Span}\{ a_{1},a_{2},...,a_{n}\} $.
+    The Row Space of $ A $ is $ RowA=\text{Span}\{ r_{1},r_{2},...r_{m} \} $.
+    
+    \textbf{Ex 3 }\\
+    Find a spanning set for the null space of the matrix. As in solve $ Ax=0 $ 
+    \[
+       A = \begin{bmatrix}
+            -3 &6 &-1 &1 &-7\\
+            1 &-2 &2 &3 &-1\\
+            2 &-4 &5 &8 &4
+        \end{bmatrix}
+    \]
+
+    Solution, find all $ x $ that satisfies $ Ax=0 $
+    \[
+        \begin{bmatrix}
+            -3 &6 &-1 &1 &-7 &0\\
+            1 &-2 &2 &3 &-1 &0\\
+            2 &-4 &5 &8 &4 &-0
+        \end{bmatrix} \to 
+        \begin{bmatrix}
+            1 &-2 &0 &-1 &3 &0\\
+            0 &0 &1 &2 &-2 &0\\
+            0 &0 &0 &0 &0 &0 
+        \end{bmatrix}
+    \]
+   x must be in $ \mathbb{R}^{n} $
+   \[
+       \begin{gathered}
+       \begin{bmatrix}
+           x_{1}\\
+           x_{2}\\
+           x_{3}\\
+           x_{4}\\
+           x_{5}     
+       \end{bmatrix} = 
+       \begin{bmatrix}
+           2x_{2} + x_{4} - 3x_{5}\\
+           x_{2}\\
+           -2x_{4} + 2x_{5}\\
+           x_{4}\\
+           x_{5}   
+       \end{bmatrix} = 
+       x_{2} \begin{bmatrix}
+           2\\
+           1\\
+           0\\
+           0\\
+           0
+       \end{bmatrix} + x_{4}\begin{bmatrix}
+           1\\
+           0\\
+           -2\\
+           1\\
+           0
+       \end{bmatrix} + x_{5}\begin{bmatrix}
+           -3\\
+           0\\
+           2\\
+           0\\
+           1
+       \end{bmatrix} 
+       \end{gathered}
+   \]
+
+   \textbf{Ex 4}\\
+   let $ w = \{ \begin{bmatrix}
+       6a-b\\
+       a+b\\
+       -7a
+   \end{bmatrix} : a,b \in \mathbb{R} \} $. Find a matrix $ A $, such that $ w=$ Col $A $.
+   \[
+       \begin{gathered}
+       w = \{ \begin{bmatrix}
+           6a-b\\
+           a+b\\
+           -7a
+       \end{bmatrix} :a,b \in \mathbb{R}\} = 
+       \{ a\begin{bmatrix}
+           6\\
+           1\\
+           -7
+       \end{bmatrix} + b\begin{bmatrix}
+           -1\\
+           1\\
+           0
+       \end{bmatrix}: a,b \in \mathbb{R}\} = 
+       \text{Span} \{ \begin{bmatrix}
+           6\\
+           1\\
+           -7
+       \end{bmatrix} + \begin{bmatrix}
+           -1\\
+           1\\
+           0
+       \end{bmatrix}\} \\
+       A=
+       \begin{bmatrix}
+           6 &-1\\
+           1 &1\\
+           -7 &0
+       \end{bmatrix}
+       \end{gathered}
+   \]
+
+   We now use the vectors in the spanning set as the columns of A as shown above. Then $ w=ColA $ 
+
+   \textbf{Theorem 4 1.4}\\
+   Recall that the columns of $ A $ span $ \mathbb{R}^{m} $ if and only if the equation $ Ax=b $ has a solution for each $ b $. This can be restated like so. 
+   
+   The column space of an $ m \times n $ matrix $ A $ is all of $ \mathbb{R}^{m} $ if and only if the equation $ Ax=b $ has a solution for each $ b $ in $ \mathbb{R}^{m} $.
+
+   Based on Theorem 1 4.1, If $ v_1, ... , v_p $ are in a vector space $ V $, then Span$ \{ v_1,...,v_p \} $ is a subspace of $ V $. 
+
+   \textbf{Ex 6}\\
+   Let 
+   \[
+     A= \begin{bmatrix}
+       2 &4 &-2 &1\\
+       -2 &-5 &7 &3\\
+       3 &7 &-8 &6
+     \end{bmatrix}
+   \]
+   
+   A) If the column space of $ A $ is a subspace of $ \mathbb{R}^{k} $, what is $ k $?
+   The columns of $ A $ each have three entries so Col $ A $ is a subspace of $ \mathbb{R}^{k} $, where $  $   
+
+   B) If the null space of $ A $ is a subspace of $ \mathbb{R}^{k} $, what is $ k? $ 
+   A vector $ x $ such that $ Ax=0 $ must have four entries so Nul $ A $ is a subspace of $ \mathbb{R}^{k} $, where $ k=4 $.
+
+   To extend our understanding...
+
+   \textbf{Ex 8}\\
+   Given the matrix $ A $ from the Example 6 and the following vectors
+   \[
+     \begin{gathered}
+     A= \begin{bmatrix}
+       2 &4 &-2 &1\\
+       -2 &-5 &7 &3\\
+       3 &7 &-8 &6
+     \end{bmatrix}
+     u = \begin{bmatrix}
+       3\\
+       -2\\
+       -1\\
+       0
+     \end{bmatrix}
+     v = \begin{bmatrix}
+       3\\
+       -1\\
+       3
+     \end{bmatrix}
+     \end{gathered}
+   \]
+
+   Answer the following questions.
+
+   A) Determine if $ u $ is in Nul $ A $. Could $ u $ be in Col $ A $?
+   \[
+     Au = \begin{bmatrix}
+       2 &4 &-2 &1\\
+        -2 &-5 &7 &3\\
+        3 &7 &-8 &6
+     \end{bmatrix} \begin{bmatrix}
+       3\\
+       -2\\
+       -1\\
+       0
+     \end{bmatrix} = 
+     \begin{bmatrix}
+       0\\
+       -3\\
+       3
+     \end{bmatrix} \neq
+     \begin{bmatrix}
+       0\\
+       0\\
+       0
+     \end{bmatrix}
+   \]
+   
+   Since $ u $ is not a solution to $ Ax=0 $, $ u $ is not in the Nul $ A $. Also with four entries, $ u $ could not be in Col $ A $  as Col $ A $ is a subspace of $ \mathbb{R}^{3} $ 
+
+   B) Determine if $ v $ is in Col $ A $. Could $ v $ be in Nul $ A $?
+   \[
+     \begin{bmatrix}
+       2 &4 &-2 &1 &3\\
+        -2 &-5 &7 &3 &-1\\
+        3 &7 &-8 &6 &3
+     \end{bmatrix} \to 
+     \begin{bmatrix}
+       2 &4 &-2 &1 &3\\
+       0  &1 &-5 &-4 &-2\\
+       0 &0 &0 &17 &1
+     \end{bmatrix}
+   \]
+   
+   The equation $ Ax=v $ is consistent so $ v $ is in Col $ A $. However $ v $ cannot be in Nul $ A $ as $ v $ only has three entries and Nul $ A $ is a subspace of $ \mathbb{R}^{4} $. 
+
+
+\end{document}

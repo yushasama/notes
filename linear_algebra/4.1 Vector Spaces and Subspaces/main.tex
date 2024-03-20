@@ -53,6 +53,28 @@
           0
       \end{bmatrix}: s,t \in \mathbb{R} \}
     \]
-    is a subset of $ \mathbb{R}^{3} $ that looks and acts like $ \mathbb{R}^{2} $, although it is distint from $ \mathbb{R}^{2}  $. Show that $ H $ is a subspace of $ \mathbb{R}^{3} $. 
-    
+    is a subset of $ \mathbb{R}^{3} $ that looks and acts like $ \mathbb{R}^{2} $, although it is distint from $ \mathbb{R}^{2}  $. Show that $ H $ is a subspace of $ \mathbb{R}^{3} $.
+
+    The zero vector is in $ H $ and $ H $ is closed under vector addition and scalar multiplication. This is due to operations on vectors in $ H $ always produce vectors whose third entries are zero and so belong to $ H $. Hence, $ H $ is a subspace of $ \mathbb{R}^{3} $.
+
+  \textbf{Ex 10}\\
+  A plane $ \mathbb{R}^{3} $ that is not through the origin is not a subspace of $ \mathbb{R}^{3} $ because the plane does not contian the zero vector of $ \mathbb{R}^{3} $. The same can be said for a line in $ \mathbb{R}^{2} $ not through the origin, namely the line is not a subspace of $ \mathbb{R}^{2} $.
+
+  \textbf{Ex 11}\\
+  Given $ v_1 ~\&~ v_2 $ in a vector space $ V $, let $ H=\text{Span}\{ v_1 ,v_2\} $. Show that $ H $ is a subspace of $ V $.
+  \[
+    \begin{gathered}
+    0=0v_1 + 0v_2\\
+    u=s_1v_1 + s_2 v_2 ~\&~ w=t_1v_1 + t_2v_2\\
+    u+w = (s_1v_1+s_2v_2) + (t_1v_1+t_2v_2)\\
+    (s_1+t_1)v_1 + (s_2+t_2)v_2
+    \end{gathered}
+  \]
+
+  As the vector $ u+w $ can be written in the form of $ a_0v_1 + a_1v_1 $, $ u+w $ is i $ H $.
+  \[
+    cu=c(s_1v_1+s_2v_2)=(cs_1)v_1+(cs_2)v_2
+  \]
+
+  Because the zero vector is in $ H $ as well as $ H $ being closed under scalar addition and vector addition. Thus $ H $ is a subspace of $ V $.
 \end{document}
