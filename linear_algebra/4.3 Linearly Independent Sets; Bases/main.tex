@@ -1,0 +1,165 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{4.3 Linearly Independent Sets; Bases}
+
+\begin{document}
+  \maketitle
+  An indexed set of vectors $ \{ v_1,...,v_p \} $ in $ V $ is said to be linearly independent if the linear equation
+  \[
+    c_1v_1+c_2v_2+...+c_pv_p=0
+  \]
+  has only the trivial solution.
+
+  THe set $ \{ v_1,...,v_p \} $ is said to be linearly dependent if $ (1) $ has a nontrivial solution, that is, if there are some weights $ c_1,...,c_p $, not all zero, such that $ (1) $ holds. In such a case, $ (1) $ is called a linear dependence relation among $ v_1,...,v_p $.
+
+  \textbf{Theorem 4.4}\\
+  An indexed set $ \{ v_1,...,v_p \} $ of two or more vectors, with $ v_1 \neq 0 $ is linearly dependent if and only if some $ v_j $ (with $ j>1 $ ) is a linear combination of the preceding vectors $ v_1,...,v_{j-1} $.
+
+  A main difference between linear dependence in $ \mathbb{R}^{n} $ and in a general vector space is that when the vectors are not $ n-tuples $, the homogeneous equation $ (1) $ usually cannot be written as a system of $ n $ linear equations. Meaning the vectors cannot be made into the columns of a matrix $ A $ in order to study the equation $ Ax=0 $. The definition of linear independence and Theorem 4.4 must be used.
+
+  \textbf{Ex 1}\\
+  Let $ p_1(t)=1, P_2(t)=t ~\&~ p_3(t)=4-t$. Then $ \{ p_1,p_2,p_3 \} $ is linearly dependent in $ \mathbb{P} $ because $ p_3=4p_1-p_2 $.
+
+  \textbf{Def}\\
+  Let $ H $ be a subspace of a vector space $ V $. A set of vectors $ \mathcal{B} $ in $ V $ is a basis for $ H $ if
+
+  (i) $ \mathcal{B} $ is linearly independent set, and
+
+  (ii) the subspace spanned by $ \mathcal{B} $ coincides with $ H $; that is,
+  \[
+    H=\text{Span }\mathcal{B}
+  \]
+  
+  The definition of a basis applies to the case when $ H=V $, because any vector space is a subsapce of itself. Thus a basis of $ V $ is a linearly independent set that spans $ V $. 
+
+  \textbf{Ex 3}\\
+  Let $ A $ be an invertible $ n \times n $ matrix. Then the columns of $ A $ form a basis for $ \mathbb{R}^{n} $ because they are linearly independent and span $ \mathbb{R}^{n} $, by the Invertible Matrix Theorem.
+
+  \textbf{Ex 5}\\
+  Let $ v_1 = \begin{bmatrix}
+    3\\
+    0\\
+    -6
+  \end{bmatrix}, v_2 = \begin{bmatrix}
+    -4\\
+    1\\
+    7
+  \end{bmatrix}, ~\&~ v_3 = \begin{bmatrix}
+    -2\\
+    1\\
+    5
+  \end{bmatrix} $. Determine if $ \{ v_1,v_2,v_3 \} $ is a basis for $ \mathbb{R}^{3} $.
+  \[
+    A = \begin{bmatrix}
+      3 &-4 &-2\\
+      0 &1 &1\\
+      -6 &7 &5
+    \end{bmatrix} \to 
+    \begin{bmatrix}
+      1 &0 &0\\
+      0 &1 &0\\
+      0 &0 &1
+    \end{bmatrix}
+  \]
+
+  The matrix $ A=\begin{bmatrix}
+    v_1 &v_2 &v_3
+  \end{bmatrix} $ has three pivot positions thus $ A $ is invertible. So the columns of $ A $ form a basis for $ \mathbb{R}^{3} $.
+
+  \textbf{The Spanning Set Theorem}\\
+  A basis is an "efficient" spanning set that contains no unnecessary vectors. A basis can be constructed from a spanning set by discarding unneeded vectors.
+
+  \textbf{Ex 7}\\
+  Let
+  \[
+    \begin{gathered}
+    v_1 = \begin{bmatrix}
+      0\\
+      2\\
+      -1
+    \end{bmatrix}, v_2 =
+    \begin{bmatrix}
+      2\\
+      2\\
+      0
+    \end{bmatrix}, v_3=
+    \begin{bmatrix}
+      6\\
+      16\\
+      -5
+    \end{bmatrix}, ~\&~ 
+    H = \text{Span }\{ v_1,v_2,v_3 \}
+    \end{gathered}
+  \]
+
+  Note that $ v_3=5v_1+3v_2 $, and show that Span $ \{ v_1,v_2,v_3 \} = $ Span $ \{ v_1,v_2 \} $. Then find a basis for the subspace $ H $.
+
+  Every vector in Span $ \{ v_1,v_2 \} $ belongs to $ H $ because
+  \[
+    c_1v_1+c_2v_2=c_1v_1+c_2v_2+0v_3
+  \]
+  
+  Now let $ x $ be any vector in $ H $, $ x=c_1v_1+c_2v_2+c_3v_3 $. Since $ v_3=5v_1+3v_2 $, we may substitute
+  \[
+    \begin{gathered}
+    x=c_1v_1+c_2v_2+c_3(5v_1+3v_2)\\
+    (c_1+5c_3)v_1 + (c_2+3c_3)v_2
+    \end{gathered}
+  \]
+
+  This $ x $ is in Span $ \{ v_1,v_2 \} $, so every vector in $ H $ already belongs to Span $ \{ v_1,v_2 \} $. Thus $ H $ and Span $ \{ v_1,v_2 \} $ are actually the same set of vectors.
+
+  \textbf{The Spanning Set Theorem}\\
+  Let $ S=\{ v_1,...,v_p \} $ be a set in a vector space $ V $, and let $ H = $ Span $ \{ v_1,...,v_p \} $
+
+  a. If one of the vectors in $ S $ such as $ v_k $ is a linear combination of the remaining vectors in $ S $, then the set formed from $ S $ by removing $ v_k $ still spans $ H $.
+
+  b. If $ H \neq \{ 0 \} $, some subset of $ S $ is a basis for $ H $. 
+
+  \textbf{Ex 8}\\
+  Find a basis for Col $ B $, where
+  \[
+    B = \begin{bmatrix}
+      b_1 &b_2 &... &b_5
+    \end{bmatrix} = 
+    \begin{bmatrix}
+      1 &4 &0 &2 &0\\
+      0 &0 &1 &-1 &0\\
+      0 &0 &0 &0 &1\\
+      0 &0 &0 &0 &0
+    \end{bmatrix}
+  \]
+  
+  Each nonpivot column of $ B $ is a linear combination of the pivot columns. In fact, $ v_2=4b_1 ~\&~ b_4=2b_1-b_3 $. By the Spanning Set Theorem, we may discard $ v_2 ~\&~ b_4 $. By the Spanning Set Theorem, we may discard $ b_2 ~\&~ b_4 ~\&~ \{ b_1,b_3,b_5 \} $ will still span Col $ B $. Let
+  \[
+    S = \text{\Huge{\{}}
+      \begin{bmatrix}
+        1\\
+        0\\
+        0\\
+        0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0\\
+        1\\
+        0\\
+        0
+      \end{bmatrix},
+      \begin{bmatrix}
+        0\\
+        0\\
+        1\\
+        0
+      \end{bmatrix}
+    \text{\Huge{\}}}
+  \]
+
+  Since $ b_1 \neq 0 $ and no vector in $ S $ is a linear combination of the vectors that precide it, $ S $ is linearly independent. Thus $ S $ is a basis for Col $ B $.   
+  
+  \textbf{Theorem 4.6}\\
+  The pivot columns of a matrix $ A $ form a basis for Col $ A $.
+
+
+  
+  
+\end{document}

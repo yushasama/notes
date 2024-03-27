@@ -180,10 +180,36 @@
     \frac{1}{2}(1-\cos{1})=\boxed{\frac{1-\cos{1}}{2}} 
     \end{gathered}
   \]
-  
-  
-  
-  
+ 
+  \textbf{Properties of Double Integrals}
+  \[
+    \iint_D [f(x,y)+g(x,y)]~dA = \iint_D f(x,y)~dA + \iint g(x,y)~dA
+  \]
+  \[
+    \iint_D cf(x,y)~dA = c \iint f(x,y)~dA
+  \]
 
-  
+  If $ f(x,y) \ge g(x,y) \forall (x,y) \in D $, then
+  \[
+    \iint_D f(x,y)~dA \ge \iint g(x,y)~dA
+  \]
+
+  If $ D=D_1 \cup D_2 $, where $ D_1 ~\&~ D_2 $ don't overlap except perhaps on their boundaries then
+  \[
+    \iint f(x,y)~dA = \iint_{D_1} f(x,y)~dA + \iint_{D_2} f(x,y)~dA
+  \]
+
+  \begin{center}
+    \includegraphics[width=6cm]{12_2_6}
+  \end{center}
+
+  The above integral can be used to evaluate double integrals over regions $ D $ that can be expressed as a union of regions of type I or type II. As shown below.
+  \begin{center}
+    \includegraphics[width=10cm]{12_2_7}
+  \end{center}
+
+  If we integrate the constant function $ f(x,y)=1 $ over a region $ D $, we get the area of $ D $
+  \[
+    \iint_D 1~dA = A(D)
+  \]
 \end{document}

@@ -1,0 +1,171 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{4.5 The Dimension of a Vector Space}
+
+\begin{document}
+  \maketitle
+  \textbf{Theorem 4.10}\\
+  If a vector space $ V $ has a basis $ \mathcal{B}=\{ b_1,...,b_n \} $, then any set in $ V $ containing more than $ n $ vectors must be linearly dependent.
+
+  \textbf{Proof}\\
+  Let $ \{ u1,...,u_p \} $ be a set in $ V $ with more than $ n $ vectors. The coordinate vectors $ \begin{bmatrix}
+    u_1
+  \end{bmatrix}_\mathcal{B},...,\begin{bmatrix}
+    u_p
+  \end{bmatrix}_\mathcal{B} $ form a linearly dependent set in $ \mathbb{R}^{n} $, because there are more vectors $ (p) $ than entries $ (n) $ in each vector. So there exists scalars $ c_1,...,c_p $, not all zero such that
+  \[
+    c_1\begin{bmatrix}
+      u_1
+    \end{bmatrix}_\mathcal{B}+...+c_p\begin{bmatrix}
+      u_p
+    \end{bmatrix}_\mathcal{B}=\begin{bmatrix}
+      0\\
+      \vdots\\
+      0
+    \end{bmatrix}
+  \]
+
+  Since the coordinate mapping is a linear transformation,
+  \[
+    \begin{bmatrix}
+      c_1u_1+...+c_pu_p
+    \end{bmatrix}_\mathcal{B}=\begin{bmatrix}
+      0\\
+      \vdots\\
+      0
+    \end{bmatrix}
+  \]
+
+  The zero vector displays the $ n $ weights needed to build the vectors $ c_1u_1+...+c_pu_p $ from the basis vectors in $ \mathcal{B} $. That is, $ c_1u_1+...+c_pu_p=0b_1+...+0b_n=0 $. Then since $ c_i $ are not all zero, $ \{ u_1,...,u_p \} $ is linearly dependent.
+
+  Meaning that Theorem 4.10 implies that if a vector space $ V $ has a basis $ \mathcal{B}=\{ b_1,...,b_n \} $, then each linearly independent set in $ V $ has no more than $ n $ vectors.
+
+  \textbf{Theorem 4.11}\\
+  If a vector space $ V $ has a basis of $ n $ vectors, then every basis of $ V $ must consistent of exactly $ n $ vectors. 
+  
+  \textbf{Definition}\\
+  If a vector space $ V $ is spanned by a finite set, then $ V $ is said to be finite-dimensional, and the dimension of $ V $, written as dim $ V $, is the number of vectors in a basis for $ V $. The dimension of the zero vector space $ \{ 0 \} $ is defined to be zero. If $ V $ is not spanned by a finite set, then $ V $ is said to be infinite-dimensional.
+
+  \textbf{Ex 1}\\
+  The standard basis for $ \mathbb{R}^{n} $ contains $ n $ vectors, so dim $ \mathbb{R}^{n}=n $. The standard polynomial basis $ \{ 1,t,t^{2} \} $ shows that dim $ \mathbb{P}_2=3 $. In general, dim $ \mathbb{P}_n=n+1 $. The space $ \mathbb{P} $ of all polynomials is infinite-dimensional. 
+ 
+  \textbf{Ex 2}\\
+  Let $ H= $ Span $ \{ v_1,v_2 \} $, where $ v_1=\begin{bmatrix}
+    3\\
+    6\\
+    2
+  \end{bmatrix} $ and $ v_2=\begin{bmatrix}
+    -1\\
+    0\\
+    1
+  \end{bmatrix} $. A basis for $ H $ is $ \{ v_1,v_2 \} $, since $ v_1 ~\&~ v_2 $ are not multiples and hence are linearly independent. Thus dim $ H =2$. 
+
+  \textbf{Ex 3}\\
+  Find the dimension of the subspace
+  \[
+    H = \text{\huge{\{}} \begin{bmatrix}
+      a-3b+6c\\
+      5a+4d\\
+      b-2c-d\\
+      5d
+    \end{bmatrix}: a,b,c,d \in \mathbb{R} \text{\huge{\}}}
+  \]
+
+  $ H $ is the set of all linear combinations of the vectors
+  \[
+    v_1=\begin{bmatrix}
+      1\\
+      5\\
+      0\\
+      0
+    \end{bmatrix}, \qquad v_2=\begin{bmatrix}
+      -3\\
+      0\\
+      1\\
+      0
+    \end{bmatrix}, \qquad v_3=\begin{bmatrix}
+      6\\
+      0\\
+      -2\\
+      0
+    \end{bmatrix}, \qquad v_4=\begin{bmatrix}
+      0\\
+      4\\
+      -1\\
+      5
+    \end{bmatrix}
+  \]
+  
+  We can see that $ v_3 $ is a multiple of $ v_2 $. So by the Spanning Set Theorem, $ v_3 $ can be discarded and we would stil have a set that spans $ H $. The 3 other vectors are linearly independent so $ \{ v_1,v_2,v_4 \} $ is linearly independent and hence it is a basis for $ H $. Thus
+  \[
+    \boxed{\text{dim }H=3}
+  \]
+
+  \textbf{Subspaces of a Finite-Dimensional Space}\\
+  The next theorem is a natural counterpart to the Spanning Set Theorem.
+
+  \textbf{Theorem 4.12}\\
+  Let $ H $ be a subspace of a finite-dimensional vector space $ V $. Any linearly independent set in $ H $ can be expanded, if necessary, to a basis for $ H $. Also, $ H $ is finite-dimensional and 
+  \[
+    \text{dim }H\le \text{dim }V
+  \]
+ 
+  \textbf{Theorem 4.13 The Basis Theorem}\\
+  Let $ V $ be a p-dimensional vector space, $ b \ge 1 $. Any linearly independent set of exactly $ p $ elements in $ V $ is automatically a basis for $ V $. Any set of exactly $ p $ elements that spans $ V $ is automatically a basis for $ V $.
+  
+  \textbf{The Dimensions of Nul A, Col A, ~\&~ Row A}\\
+  Since the dimensions of the null space and column space of an $ m \times n $ matrix are referred to frequently, they have specific names:
+
+  \textbf{Definition}\\
+  The rank of an $ m \times n $ matrix $ A $ is the dimension of the column space and the nullity of $ A $ is the dimension of the null space.
+  
+  The rank of an $ m \times n $ matrix $ A $ is the number of pivot columns and the nullity of $ A $ is the number of free variables. Since the dimension of the row space is the number of pivot rows, it is also equal to the rank of $ A $.
+
+  \textbf{Theorem 4.14 The Rank Theorem}\\
+  The dimensions of the column space and the null space of an $ m \times n $ matrix $ A $ satisfy the equation
+  \[
+    \text{rank }A+ \text{nullity }A= \text{number of columns in }A
+  \]
+
+  \textbf{Ex 5}\\
+  Find the nullity and rank of
+  \[
+    \begin{gathered}
+    A = \begin{bmatrix}
+      -3 &6 &-1 &1 &-7\\
+      1 &-2 &2 &3 &-1\\
+      2 &-4 &5 &8 &-4
+    \end{bmatrix}\\
+    ~\\
+    Ax=0, \text{ after row reduction}
+    \begin{bmatrix}
+      1 &-2 &2 &3 &-1 &0\\
+      0 &0 1 &2 &-2 &0\\
+      0 &0 0 &0 &0 &0
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  There are three free variables,ll.run(2133)
+  .$ x_2,x_4, ~\&~ x_5 $. Hence the nullity of $ A $ is 3. Also the rank of A is $ 2 $ because $ A $ has two pivot columns.
+
+  \textbf{Ex 6}\\
+  a) If $ A $ is a $  7 \times 9 $ matrix with nullity 2, what is the rank of a?
+
+  Since $ A $ has 9 columns, rank $ A $ + 2 =9, rank $ A =7$.
+
+  b) Could a $ 6 \times 9 $ matrix have nullity 2?
+
+  The columns of the matrix are vectors in $ \mathbb{R}^{6} $, thus the dimension of the columns cannot exceed 6, that is the rank cannot exceed 6. So 6 + nulllity $ A =9$ to be true, the nullity has to be $ 3 $.
+
+  \textbf{The Invertible Matrix Theorem (continued)}\\
+  Let $ A $ be an $ n \times n $ matrix. Then the following statements are each equivalent to the statement that $ A $ is an invertible matrix.
+
+  m) The columns of $ A $ form a basis of $ \mathbb{R}^{n} $.
+  n) Col $ A =\mathbb{R}^{n}$
+  o) rank $ A=n $
+  p) nullity $ A =0$
+  q) Nul $ A =\{ 0 \}$ 
+  
+
+\end{document}

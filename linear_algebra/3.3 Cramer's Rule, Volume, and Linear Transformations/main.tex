@@ -1,0 +1,241 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{3.3 Cramer's Rule, Volume, and Linear Transformations}
+
+\begin{document}
+  \maketitle
+  \textbf{Cramer's Rule}\\
+  Cramer's rule is integral in a variety of theoretical calculations. An example would be that it can be used to study how the solution of $ Ax=b $ is affected by changes in the entries of $ b $. However, the formula is inefficient for hand calculations on matrices larger than $ 3 \times 3 $ matrices.
+
+  For any $ n \times n $ matrix $ A $ and any $ b $ in $ \mathbb{R}^{n} $, let $ A_i(b) $ be the matrix obtained from $ A $ by replacing column $ i $ by the vector $ b $.
+  \[
+    A_i(b)=\begin{bmatrix}
+      a_1 &... &b &... &a_n
+    \end{bmatrix}
+  \]
+
+  \textbf{Theorem 3.7 Cramer's Rule}\\
+  Let $ A $ be an invertible $ n \times n $ matrix. For any $ b $ in $ \mathbb{R}^{n} $, the unique solutions $ x $ of $ Ax=b $ has entries given by
+  \[
+    x_i=\frac{\text{det } A_i(b)}{\text{det }A}, \qquad i=1,2,...n
+  \]
+  
+  \textbf{Ex 1}\\
+   Use Cramer's rule to solve the system. As det $ A=2 $, the system has a unique solution.
+   \[
+     \begin{gathered}
+     3x_1-2x_2=6\\
+     -5x_1+4x_2=8\\
+     ~\\
+     A = \begin{bmatrix}
+       3 &-2\\
+       -5 &4
+     \end{bmatrix}, \qquad
+     A_1(b)=\begin{bmatrix}
+       6 &-2\\
+       8 &4
+     \end{bmatrix}, \qquad
+     A_2(b)=\begin{bmatrix}
+       3 &6\\
+       -5 &8
+     \end{bmatrix}\\
+     ~\\
+     x_1=\frac{\text{det }A_1(b) }{\text{det }A}=\frac{40}{2}=20, \qquad
+     x_2=\frac{\text{det }A_2(b) }{\text{det }A}=\frac{54}{2}=27\\\
+     ~\\
+     \boxed{x_1=20,x_2=27}
+     \end{gathered}
+   \]
+
+   \textbf{Ex 2}\\
+   Consider the following system in which $ s $ is an unspecified parameter. Determine the values of $ s $ for which the system has a unique solution, and use Cramer's rule to describe the solution.
+   \[
+     \begin{gathered}
+     3sx_1-2x_2=4\\
+     -6x_1+sx_2=1\\
+     ~\\
+     A= \begin{bmatrix}
+       3s &-2\\
+       -6 &s
+     \end{bmatrix}, \qquad A_1(b)=
+     \begin{bmatrix}
+       4 &-2\\
+       1 &s
+     \end{bmatrix}, qquad A_2(b)=
+     \begin{bmatrix}
+       3s &4\\
+       -6 &1
+     \end{bmatrix}\\
+     ~\\
+     \text{det }A=3s^{2}-12=3(s+2)(s-2)\\
+     ~\\
+     x_1=\frac{\text{det }A_1(b)}{\text{det }A}=\frac{4s+2}{3(s+2)(s-2)}\\
+     x_2=\frac{\text{det }A_2(b)}{\text{det }A}=\frac{3s+24}{3(s+2)(s-2)}=\frac{s+8}{(s+2)(s-2)}
+     \end{gathered}
+   \]
+   
+   \textbf{A Formula for $ A^{-1} $ }\\
+   Cramer's rule leads easily to a gernal formula for the inverse of an $ n \times n $ matrix $ A $. The $ j $th column of $ A^{-1} $ is a vector $ x $ that satisfies
+   \[
+     Ax=e_j
+   \]
+   where $ e_j $ is the $ j $th column of the identity matrix, and the $ i $th entry of $ x $ is the $ (i,j) $ entry of $ A^{-1} $. By $ Cramer's rule $,
+   \[
+     \begin{gathered}
+     \{ (i,j)\text{ entry of $ A^{-1} $ } \} = x_i=\frac{\text{det }A_i(e_j)}{\text{det }A}
+     \end{gathered}
+   \]
+
+  Recall that $ A_{ij} $ denotes the submatrix of $ A $ formed by deleting row $ j $ and column $ i $. A cofactor expansion down column $ i $ of $ A_i(e_j) $ shows that
+  \[
+    \text{det }A_i(e_j)=(-1)^{i+j}\text{det }A_{ji}=C_{ji}
+  \]
+
+  where $ C_{ji} $ is a cofactor of $ A $. So the $ (i,j) $ entry of $ A^{-1} $ is the cofactor $ C_{ji} $ divided by det $ A $. 
+  \[
+    A^{-1}=\frac{1}{\text{det }A}=
+    \begin{bmatrix}
+    C_{11} &C_{21} &... &C_{n1}\\
+    C_{12} &C_{22} &... &C_{n2}\\
+    \vdots &\vdots & &\vdots\\
+    C_{1n} &C_{2n} &... &C_{nn}
+    \end{bmatrix}
+  \]
+
+  The matrix of cofactors on the right side is known as the adjugate or classical adjoint of $ A $, denoted by adj $ A $.
+
+  \textbf{Theorem 3.8 An Inverse Formula}\\
+  Let $ A $ be an invertible $ n \times n $ matrix. Then
+  \[
+    A^{-1}=\frac{1}{\text{det }A}\text{adj }A
+  \]
+  
+  \textbf{Ex 3}\\
+  Find the invese of the matrix $ A = \begin{bmatrix}
+    2 &1 &3\\
+    1 &-1 &1\\
+    1 &4 &-2
+  \end{bmatrix} $ 
+ 
+   \[
+  \begin{gathered}
+  C_{11} = +\begin{vmatrix}
+  4 & -2 \\
+  3 & -2
+  \end{vmatrix} = -2 \qquad C_{12} = -\begin{vmatrix}
+  1 & 3 \\
+  3 & -2
+  \end{vmatrix} = 3 \qquad C_{13} = +\begin{vmatrix}
+  1 & -1 \\
+  4 & -2
+  \end{vmatrix} = 5 \\
+  C_{21} = +\begin{vmatrix}
+  1 & 3 \\
+  -1 & -2
+  \end{vmatrix} = 14 \qquad C_{22} = -\begin{vmatrix}
+  1 & 3 \\
+  -1 & 3
+  \end{vmatrix} = -7 \qquad C_{23} = +\begin{vmatrix}
+  1 & 3 \\
+  1 & -2
+  \end{vmatrix} = -7 \\
+  C_{31} = +\begin{vmatrix}
+  1 & 3 \\
+  4 & -2
+  \end{vmatrix} = 4 \qquad C_{32} = -\begin{vmatrix}
+  1 & 3 \\
+  1 & 1
+  \end{vmatrix} = 1 \qquad C_{33} = +\begin{vmatrix}
+  1 & 3 \\
+  1 & -1
+  \end{vmatrix} = -3\\
+  ~\\
+  \text{adj }A= \begin{bmatrix}
+    c_{11} &c_{21} &c_{31}\\
+    c_{12} &c_{22} &c_{32}\\
+    c_{13} &c_{23} &c_{33}
+  \end{bmatrix}=
+  \begin{bmatrix}
+    -2 &14 &4\\
+    3 &-7 &1\\
+    5 &-7 &-3
+  \end{bmatrix}
+  \end{gathered}
+  \]
+
+  Though det$ A $ could be computed directly, but utilizing $ (\text{adj }A)A=\text{det }A $ is much quicker.
+  \[
+    \begin{gathered}
+    A^{-1}=\frac{1}{\text{det }A}\text{adj }A\\
+    (\text{det }A)A^{-1}=\text{adj }A\\
+    (\text{det }A)A^{-1}a=\text{adj }A\\
+    (\text{det }A)I=\text{adj }A\\
+    \end{gathered}
+  \]
+
+  Thus
+  \[
+    (\text{adj }A)A= \begin{bmatrix}
+      -2 &14 &4\\
+      3 &-7 &1\\
+      5 &-7 &-3
+    \end{bmatrix}
+    \begin{bmatrix}
+      2 &1 &3\\
+      1 &-1 &1\\
+      1 &4 &-2
+    \end{bmatrix} = 
+    \begin{bmatrix}
+      14 &0 &0\\
+      0 &14 &0\\
+      0 &0 &14\\
+    \end{bmatrix}=14I
+  \]
+
+  Since $ (\text{adj }A=14I) $, then the determinant is $ 14 $. Thus
+  \[
+    \begin{gathered}
+    A^{-1}=\frac{1}{\text{det }A}\text{adj }A\\
+    A^{-1}=\frac{1}{14} \begin{bmatrix}
+      -2 &14 &4\\
+      3 &-7 &1\\
+      5 &-7 &-3
+    \end{bmatrix} = \boxed{\begin{bmatrix}
+      -\frac{1}{7} &1 &\frac{2}{7}\\
+      \frac{3}{14} &-\frac{1}{2} &\frac{1}{14}\\
+      \frac{5}{14} &-\frac{1}{2} &-\frac{3}{14}
+    \end{bmatrix}}
+    \end{gathered}
+  \]
+
+  \textbf{Theorem 9}\\
+  If $ A $ is a $ 2 \times 2$ matrix, the area of the parallelogram determined by the columns of $ A $ is $ | \text{det }A | $. If $ A $ were to be a $ 3 \times 3 $ matrix, the volume would be $ | \text{det }A | $.
+
+  \textbf{Ex 4}\\
+  Calculate the area of the parallelogram determined by the points $ (-2,-2), (0,3),(4,-1), ~\&~ (6,4) $. 
+
+  Translate the parallelogram to one that has the origin as a vertex. For example, subtract $ (-2,-2) $ from each of the four vertices. Which results in $ (0,0),(2,5),(6,1), ~\&~ (8,6) $. This parallelogram is determined by the columns of
+  \[
+    \begin{gathered}
+    A= \begin{bmatrix}
+      2 &6\\
+      5 &1
+    \end{bmatrix}
+    |\text{det }A|=| -28 |=\boxed{28}
+    \end{gathered}
+  \]
+
+  \textbf{Linear Transformations}\\
+  Determinants can be used to describe an important geometric property of linear transformations in the plane and in $ \mathbb{R}^{3} $.
+  
+  \textbf{Theorem 10}\\
+  Let $ T:\mathbb{R}^{2}\to \mathbb{R}^{2} $ be the linear transformation determined by a $ 2 \times 2 $ matrix $ A $. If $ S $ is a parallelogram in $ \mathbb{R}^{2} $, then
+  \[
+    \{ \text{area of }T(S) \}=| \text{det }A | \cdot \{ \text{area of }S \}
+  \]
+
+  If $ T $ is determined by a $ 3 \times 3 $ matrix $ A $, and if $ S $ is a parallelepiped in $ \mathbb{R}^{3} $, then
+  \[
+    \{ \text{volume of }T(S) \}=| \text{det }A | \cdot \{ \text{volume of }S \}
+  \]
+\end{document}

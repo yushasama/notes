@@ -1,0 +1,137 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{3.1 Introduction to Determinants}
+
+\begin{document}
+  \maketitle
+  Recall that a $ 2 \times 2 $ matrix is invertible if and only if its determinant is nonzero. The same applies for other $ n 
+  \times n $  matrixes.
+
+  \textbf{$ 1 \times 1 $ Matrix}
+  \[
+    \begin{gathered}
+    A = \begin{bmatrix}
+      a_{11}
+    \end{bmatrix}\\
+    \text{det}A = a_{11}
+    \end{gathered}
+  \]
+  
+  \textbf{$ 3 \times 3 $ Matrix}
+  \[
+   \Delta = \begin{bmatrix}
+    a_{11} &a_{12} &a_{13}\\
+    a_{21} &a_{22} &a_{23}\\
+    a_{31} &a_{32} &a_{33}
+  \end{bmatrix}
+  \]
+  
+  \[
+    \Delta = a_{11} \text{det}\begin{bmatrix}
+      a_{22} &a_{23}\\
+      a_{32} &a_{33}
+    \end{bmatrix} - a_{12} \text{det}\begin{bmatrix}
+      a_{21} &a_{23}\\
+      a_{31} &a_{33} 
+    \end{bmatrix}
+      + a_{13} \text{det}\begin{bmatrix}
+        a_{21} &a_{22}\\
+        a_{31} &a_{32}
+    \end{bmatrix}
+  \]
+ 
+  For brevity, we can write
+  \[
+    \Delta = a_{11} \text{det}A_{11}-a_{12}\text{det}A_{12}+a_{13}\text{det}A_{13}
+  \]
+
+  For any square matrix $ A $, let $ A_{ij} $ denote the submatrix formed by deleting the $ i $th row and $ j $th column of $ A $ .
+
+  Take the matrix
+  \[
+    A = \begin{bmatrix}
+      1 &-2 &5 &0\\
+      2 &0 &4 &-1\\
+      3 &1 &0 &7\\
+      0 &4 &-2 &0
+    \end{bmatrix}
+  \]
+  
+  Then the submatrix $ A_{32} $ would be
+  \[
+    A_{32} = \begin{bmatrix}
+      1 &5 &0\\
+      2 &4 &-1\\
+      0 &-2 &0
+    \end{bmatrix}
+  \]
+
+  Through this, we can obtain a recursive definition of a determinant. When $ n=3 $, det $ A $ is defined using determinants of the $ 2 \times 2 $ submatrices $ A_{1j} $. When $ n=4 $, det$ A $ An $ n \times n $ determinant is determined by determinants of $ (n-1) \times (n-1) $ submatrices.
+  
+  \textbf{Definition}\\
+  For $ n \ge 2 $, the determinant of an $ n \times n $ matrix $ A = \begin{bmatrix}
+    a_{ij}
+  \end{bmatrix} $ is the sum of $ n $ terms of the form $ \pm a_{1j} $ det$ A_{1j} $ with alternating plus and minus signs.
+
+  \[
+    \begin{gathered}
+    \text{det}A= a_{11} \text{det}A_{11}-a_{12} \text{det}A_{12}+...+(-1)^{1+n}a_{1_n}\text{det}A_{1n}\\
+    \sum^{n}_{j=1} (-1)^{1+j}a_{1j}\text{det}A_{1j}
+    \end{gathered}
+  \]
+
+  \textbf{Ex 1}\\
+  Compute the determinant of
+  \[
+    \begin{gathered}
+    A = \begin{bmatrix}
+      1 &5 &0\\
+      2 &4 &-1\\
+      0 &-2 &0
+    \end{bmatrix}\\
+    \Delta = 1(0-2)-5(0-0)+0(-4-0)=\boxed{-2}
+    \end{gathered}
+  \]
+
+  For the next theorem, it is convenient to write the definition of det$ A $ in a slightly different form. Given $ A= \begin{bmatrix}
+    a_{ij}
+  \end{bmatrix} $, the $ (i,j) $ cofactor of $ A $ is the number $ C_{ij} $ given by
+  \[
+    C_{ij}=(-1)^{i+j} \text{det}A_{ij}
+  \]
+
+  Then
+  \[
+    \text{det}A = a_{11}C_{11}+a_{12}C_{12}+...+a_{1n}C_{1n}
+  \]
+  
+  This is known as the cofactor expansion across the first row of $ A $.
+  
+  \textbf{Theorem 3.1}\\
+  The determinant of an $ n \times n $ matrix $ A $ can be computed by a cofactor expansion across any row or down any column. The expansion across the $ i $th row is 
+  \[
+    \text{det}A = a_{i1}C_{i1}+a_{i2}C_{i2}+...+a_{in}C_{in}
+  \]
+
+  As for the cofactor expansion down the $ j $th column is
+  \[
+    \text{det}A = a_{1j}C_{1j}+a_{2j}C_{2j}+...+a_{nj}C_{nj}
+  \]
+
+  Use a cofactor expansion across the third row to compute $ det $A, where
+  \[
+    \begin{gathered}
+    A= \begin{bmatrix}
+      1 &5 &0\\
+      2 &4 &-1\\
+      0 &-2 &0
+    \end{bmatrix}\\
+    \text{det}A = a_{31}C_{31}+a_{32}C_{32}+a_{33}C_{33}\\
+    (-1)^{3+1}a_{31}\text{det}A_{31}+(-1)^{3+2} \text{det}A_{32}+(-1)^{3+3}a_{33}\text{det}A_{33}\\
+    0(5-(-1))-(-2)(-1-0)+0(4-10)=0+2(-1)+0=\boxed{-2}
+    \end{gathered}
+  \]
+
+  \textbf{Theorem 3.2}\\
+  If $ A $ is a triangular matrix, then det $ A $ is the product of the entries on the main diagonal of $ A $.   
+\end{document}
