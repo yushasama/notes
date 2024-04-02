@@ -1,0 +1,94 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{}
+
+\begin{document}
+    \maketitle
+
+    When a basis $ \mathcal{B} $ is chosen for an n-dimensional vector space $ V $, the associated coordinate mapping onto $ \mathbb{R}^{n} $ provides a coordinate system for $ V $. Each $ x $ in $ V $ is identified uniquely bt its $ \mathcal{B} $ coordinate vector $ \begin{bmatrix}
+        x
+    \end{bmatrix}_{\mathcal{B}} $.
+
+    \textbf{Ex 1}\\
+  Consider two bases $ \mathcal{B} = \{ b_{1},b_{2} \} $ and $ C=\{ c_{1},c_{2} \} $ for a vector space $ V $, such that
+  \[
+      b_{1}=4c_{1}+c_{2} \qquad b_{2} = -6c_{1}+c_{2}      
+  \]
+
+  Suppouse that
+  \[
+      x=3b_{1}+b_{2}  
+  \]
+
+  That is, suppouse $ \begin{bmatrix}
+      x
+  \end{bmatrix}_{\mathcal{B}} = \begin{bmatrix}
+      3\\
+      1
+  \end{bmatrix} $. Find $ \begin{bmatrix}
+      x
+  \end{bmatrix}_{\mathcal{C}}  $.
+
+  Apply the coordinate mapping determined by $ C $.
+  \[
+      \begin{gathered}
+      \begin{bmatrix}
+          x
+      \end{bmatrix}_{C} = \begin{bmatrix}
+          3b_{1}+b_{2}  
+      \end{bmatrix}_{C}\\
+      \begin{bmatrix}
+          x
+      \end{bmatrix}_{C}= 
+      \begin{bmatrix}
+          \begin{bmatrix}
+              b_{1} 
+          \end{bmatrix}_{C}
+
+      &\begin{bmatrix}
+          b_{2} 
+      \end{bmatrix}_{C}
+      \end{bmatrix}
+      \begin{bmatrix}
+          3\\
+          1
+      \end{bmatrix}\\
+      \begin{bmatrix}
+          x
+      \end{bmatrix}_{C} =
+      \begin{bmatrix}
+          4 &-6\\
+          1 &1
+      \end{bmatrix}
+      \begin{bmatrix}
+          3\\
+          1
+      \end{bmatrix}=
+      \boxed{\begin{bmatrix}
+          6\\
+          4
+      \end{bmatrix}}
+      \end{gathered}
+  \]
+  
+  \textbf{Theorem 5}\\
+  Let $ \mathcal{B} = \{ b_{1},...,b_{n} \} ~\&~ C=\{ c_{1},...,c_{n} \} $ be bases for a vector space $ V $. There is a unique $ n \times n $ matrix $ P $ sich that
+  \[
+      \begin{bmatrix}
+          x
+      \end{bmatrix}_{C}= P_{C \leftarrow B} \begin{bmatrix}
+          x
+      \end{bmatrix}_{B}   
+  \]
+  and $ P_{C \leftarrow B}  $ is given by $ P_{C \leftarrow P}  = \begin{bmatrix}
+      \begin{bmatrix}
+          b_{1} 
+      \end{bmatrix}_{C} &\begin{bmatrix}
+          b_{2} 
+      \end{bmatrix}_{C} &...
+      &\begin{bmatrix}
+          b_{n} 
+      \end{bmatrix}_{C} 
+  \end{bmatrix} $ 
+  
+\end{document}
