@@ -23,3 +23,23 @@
   \text{\ooalign{\hidewidth -\kern-.3em-\hidewidth\cr$z$\cr}}%
 }
 
+\ExplSyntaxOn
+\NewDocumentCommand{\INT}{sm}
+ {
+  \kourosh_int:een
+   { \IfBooleanT{#1}{\limits} } % \limits for *-version
+   { \IfBooleanTF{#1}{6}{9} }   % less kerning for *-version
+   { #2 }
+ }
+
+\seq_new:N \l_kourosh_int_in_seq
+\seq_new:N \l_kourosh_int_out_seq
+
+\cs_new_protected:Nn \kourosh_int:nnn
+ {
+  \seq_set_from_clist:Nn \l_kourosh_int_in_seq { #3 }
+  \seq_set_map:NNn \l_kourosh_int_out_seq \l_kourosh_int_in_seq { \int#1 ##1 }
+  \seq_use:Nn \l_kourosh_int_out_seq { \mspace{-#2mu} }
+ }
+\cs_generate_variant:Nn \kourosh_int:nnn { ee }
+\ExplSyntaxOff
