@@ -1,0 +1,95 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.2 The Characteristic Equation}
+
+\begin{document}
+  \maketitle
+  When solving for scalars $ \lambda $ such that the matrix equation
+  \[
+    (A-\lambda I)x=0
+  \]
+
+  has a nontrivial solution. Meaning that by the Invertible Matrix Theorem, we find that this problem is equivalent to finding all $ \lambda $ such that matrix $ A - \lambda I $ is not invertible.
+
+  The matrix fails to be invertible precisely when its determinant is zero. So the eigenvalues of $ A $ are the solutions of the equation
+  \[
+    \text{det}(A-\lambda I) = 0
+  \]
+
+  \textbf{Theorem 5.3 Properties of Determinants}\\
+  Let $ A ~\&~ B $ be $ n \times n $ matrices.
+
+  a) $ A $ is invertible if and only if det $ A\neq0 $
+  
+  b) det $ AB =$ (det $ A $ )(det $ B $ )
+
+  c) det $ A^{T} =$ det $ A $
+
+  d) If $ A $ is triangular, then det $ A $ is the product of the entries on the main diagonal of $ A $.
+
+  e) A row replacement operation on $ A $ does not change the determinant. A row interchange changes the sign of the determinant. A row scaling also scales the determinant by the same scalar factor.
+
+  \textbf{The Invertible Matrix THeorem}\\
+  Let $ A $ be an $ n \times n $ matrix. Then $ A $ is invertible if and only if
+  
+  r) The number $ 0 $ is not an eigenvalue of $ A $.
+
+  \textbf{The Characteristic Equation}\\
+  The scalar equation det $ (A_ \lambda I)=0 $ is called the characteristic equation of $ A $.
+
+  A scalar $ \lambda $ is an eigenvalue of an $ n \times n $ matrix $ A $ if and only if $ \lambda $ satisfies the characteristic equation
+  \[
+    \text{det}(A-\lambda I)=0
+  \]
+
+  \textbf{Ex 1}\\
+  Find the characteristic equation of 
+  \[
+    A = 
+    \begin{bmatrix}
+      5 &-2 &6 &-1\\
+      0 &3 &-8 &0\\
+      0 &0 &5 &4\\
+      0 &0 &0 &1
+    \end{bmatrix}
+  \]
+
+  \[
+    \begin{gathered}
+    \text{det}(A_\lambda I)=
+    \begin{vmatrix}
+    5-\lambda &-2 &6 &-1\\
+    0 &3-\lambda &-8 &0\\
+    0 &0 &5-\lambda &4\\
+    0 &0 &0 &1-\lambda
+    \end{vmatrix}
+    \end{gathered}\\
+    (5-\lambda)(3-\lambda)(5-\lambda)(1-\lambda)
+  \]
+
+  The characteristic equation is 
+  \[
+    (5-\lambda)^{2}(3-\lambda)(1-\lambda)=0
+  \]
+
+  Expanding the product, we can also write
+  \[
+    \lambda^{4}-14\lambda^{3}+68\lambda^{2}-130\lambda+75=0
+  \]
+
+  So the matrix $ A $ has the eigenvalues $ 5,3,1 $, with $ 5 $ having multiplicity 2.
+  
+  
+
+
+  
+
+
+  
+  
+
+
+  
+  
+  
+\end{document}
