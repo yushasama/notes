@@ -1,0 +1,122 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.3 Diagonalization}
+
+\begin{document}
+    \maketitle
+    \textbf{Ex 1}\\
+    If $ D=\begin{bmatrix}
+        5 &0\\
+        0 &3
+    \end{bmatrix} $, then
+    $ D^{2}=\begin{bmatrix}
+        5 &0\\
+        0 &3
+    \end{bmatrix}
+    \begin{bmatrix}
+        5 &0\\
+        0 &3
+    \end{bmatrix}=
+    \begin{bmatrix}
+        5^{2} &0\\
+        0 &3^{2}  
+    \end{bmatrix}
+    $
+
+    and
+    \[
+        D^{3}=DD^{2}=
+        \begin{bmatrix}
+            5 &0\\
+            0 &3
+        \end{bmatrix}
+        \begin{bmatrix}
+            5^{2}  &0\\
+            0 &3^{2} 
+        \end{bmatrix}=
+        \begin{bmatrix}
+            5^{3} &0\\
+            0 &3^{3}  
+        \end{bmatrix}
+    \]
+
+    In general,
+    \[
+        D^{k}=
+        \begin{bmatrix}
+            5^{k} &0\\
+            0 &3^{k}  
+        \end{bmatrix}, \qquad \text{for }k \ge 1
+    \]
+
+    If $ A=PDP^{-1} $, for some invertible $ P $ and diagonal $ P $, then $ A^{k} $ is also easy to compute.
+
+    \textbf{Ex 2}\\
+    Let $ A=\begin{bmatrix}
+        7 &2\\
+        -4 &1
+    \end{bmatrix} $. Find a formula for $ A^{k} $, given that $ A=PDP^{-1} $, where
+    \[
+        P=\begin{bmatrix}
+            1 &1\\
+            -1 &-2
+        \end{bmatrix} \qquad ~\&~ \qquad 
+        D=\begin{bmatrix}
+            5 &0\\
+            0 &3
+        \end{bmatrix}
+    \]
+
+    \[
+        \begin{gathered}
+        P^{-1}=\begin{bmatrix}
+            2 &1\\
+            -1 &-1
+        \end{bmatrix} 
+        \end{gathered}\\
+        ~\\
+        A^{2}=(PDP^{-1})(PDP^{-1})=PD(P^{-1}P)DP^{-1}=PDDP^{-1}, \qquad P^{-1}P=I\\
+        PD^{2}P^{-1}=\begin{bmatrix}
+            1 &1\\
+            -1 &-2
+        \end{bmatrix}
+        \begin{bmatrix}
+            5^{2} &0\\
+            0 &3^{2}  
+        \end{bmatrix}
+        \begin{bmatrix}
+            2 &1\\
+            -1 &-1
+        \end{bmatrix}\\
+        ~\\
+        A^{3}=(PDP^{-1})(PDP^{-1})(PDP^{-1})=PD(P^{-1}PPP^{-1}P^{-1}P)D^{2} =PD^{3}P^{-1}   
+    \]
+
+    So in general, for $ k \ge 1 $
+    \[
+        \begin{gathered}
+        A^{K}=PD^{K}P^{-1}=
+        \begin{bmatrix}
+            1 &1\\
+            -2 &-2
+        \end{bmatrix}
+        \begin{bmatrix}
+            5^{k} &0\\
+            0 &3^{k}  
+        \end{bmatrix}
+        \begin{bmatrix}
+            2 &1\\
+            -1 &-1
+        \end{bmatrix}
+        \end{gathered}\\
+        \begin{bmatrix}
+            2\cdot 5^{k}-3^{k} &5^{k}-3^{k}\\
+            2 \cdot 3^{k}-2\cdot 5^{k} &2\cdot 3^{k}-5^{k}       
+        \end{bmatrix}
+    \]
+
+    \textbf{The Diagonalization Theorem}\\
+    An $ n \times n $ matrix $ A $ is diagonalizable if and only if $ A $ has $ n $ linearly indepedent vectors.
+
+    $ A=PDP^{-1} $, with $ D $  
+\end{document}
