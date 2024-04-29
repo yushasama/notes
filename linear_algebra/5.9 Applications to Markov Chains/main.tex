@@ -1,0 +1,107 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.9 Applications to Markov Chains}
+
+\begin{document}
+  \maketitle
+  \textbf{Definition}\\
+  A vector with nonnegative entries that add up to 1 is called a probability vector. A stochastic matrix is a square matrix whose columns are probability vectors.
+
+  A Markov chain is a sequence of probability vectors $ x_0,x_1,x_2,..., $ together with a stochastic matrix $ P $, such that
+  \[
+    \begin{gathered}
+    x_1=Px_0, \qquad x_2=Px_1, \qquad x_3=Px_2, \qquad ...
+    \end{gathered}
+  \]
+
+  Thus the Markov chain is described by the first-order difference equation
+  \[
+    x_{k+1}=Px_k \qquad \text{for }k=0,1,2...
+  \]
+
+  When a Markov chain of vectors in $ \mathbb{R}^{n} $ describes a system or a sequence of experiments, the entries in $ x_k $ list, respectively, the probabilities that the outcome of the experiment is one of possible $ n $ outcomes. For this reason, $ x_k $ is often called a state vector.
+
+  \textbf{Ex 1}\\
+  Given a migration matrix $ M $ 
+  \[
+    \begin{gathered}
+    M=\begin{bmatrix}
+      .95 &.03\\
+      .05 &.97
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  Wheere the columns represent the percentage of city \& surbaban residents moving to city and suburbs (depicted by the first and second row respectively).
+
+  Suppouse that in $ 2020 $, the population is $ 600,000 $ in the city and $ 400,000 $ in the suburbs. What is the distribution of the population in $ 2021 $? In $ 2022 $?
+
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      .95 &.03\\
+      .05 &.97
+    \end{bmatrix}
+    \begin{bmatrix}
+      600,000\\
+      400,000
+    \end{bmatrix}=
+    \begin{bmatrix}
+      582,000\\
+      418,000
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  Then by dividing the result by the total population of $ 1,000,000 $, we get
+  $x_1= \begin{bmatrix}
+    .582\\
+    .418
+  \end{bmatrix} $ 
+  
+  So the vector $ x_1 $ gives the population distribution in $ 2021 $. That is $ 58.2\% ~\&~ 41.8\% $ of the population lived in the city and suburbs, respectively. Similarly, the population distribution in $ 2022 $ is described by $ x_2 $, where
+  \[
+    \begin{gathered}
+    x_2=Mx_1=\begin{bmatrix}
+      .95 &.03\\
+      .05 &.97
+    \end{bmatrix}
+    \begin{bmatrix}
+      .582\\
+      .418
+    \end{bmatrix}=
+    \begin{bmatrix}
+      .565\\
+      .435
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  \textbf{Ex 1}\\
+  Given the matrix $ A=\begin{bmatrix}
+    -1.5 &.5\\
+    1 &-1
+  \end{bmatrix}, x(t)=\begin{bmatrix}
+    x_1(t)\\
+    x_2(t)
+  \end{bmatrix}, ~\&~ x(0)=\begin{bmatrix}
+    5\\
+    4
+  \end{bmatrix} $. 
+
+  The eigenvalues of $ A $ are $ \lambda_1=-.5 ~\&~ \lambda_2=-2 $ with corresponding eigenvectors
+  \[
+    v_1=\begin{bmatrix}
+      1\\
+      2
+    \end{bmatrix} \qquad
+    v_2=\begin{bmatrix}
+      -1\\
+      1
+    \end{bmatrix}
+  \].
+
+
+  
+  
+\end{document}

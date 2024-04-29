@@ -1,0 +1,125 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.7 Applications to Differential Equations}
+
+\begin{document}
+  \maketitle
+  In many applied problems, there are several quantities varying continuously in time, and they are related by a system of differential equations,
+  \[
+    \begin{gathered}
+    x'_1=a_{11}x_1+...+a_{1n}x_n\\
+    x'_2=a_{21}x_1+...+a_{2n}x_n\\
+    \vdots\\
+    x'_n=a_{n1}x_1+...+a_{nn}x_n\\
+    \end{gathered}
+  \]
+
+  Here $ x_1,...x_n $ are differentiable functions of $ t $, with derivatives $ x'_1,...,x'_n $, and the $ a_{ij} $ are constants. The crucial feature of such a system is that it is linear. To visualize, write the system as a matrix differential equation
+  \[
+    x'(t)=Ax(t) \qquad (1)
+  \]
+
+  where
+  \[
+    \begin{gathered}
+    x(t) = \begin{bmatrix}
+      x_1(t)\\
+      \vdots\\
+      x_n(t)
+    \end{bmatrix}, \qquad
+    x'(t)=\begin{bmatrix}
+      x'_1(t)\\
+      \vdots\\
+      x'_n(t)
+    \end{bmatrix}, \qquad
+    A=\begin{bmatrix}
+      a_{11} &... &a_{1n}\\
+      \vdots & &\vdots\\
+      a_{n1} &... &a_{nn}
+    \end{bmatrix}
+    \end{gathered}
+  \]
+ 
+  A solution to the equation $ (1) $  above is a vector-valued function that satisfies the equation for all $ t $ in some interval of real numbers, such as $ t \ge 0 $.
+
+  The equation is linear because both differentiation and multiplication of vectors are linear transformations. Thus, if $ u ~\&~ v $ are solutions of $ x'=Ax $, then $ cu+dv $ is also a solution, because
+  \[
+    \begin{gathered}
+      (cu+dv)'=cu'+dv'\\
+      cAu+dAv=A(cu+dv)
+    \end{gathered}
+  \]
+
+  There always exists a fundamental set of solutions to $ (1) $. If $ A $ is $ n \times n $, then there are $ n $ linearly independent functions in a fundamental set. With each solution of $ (1) $ being a unique linear combination of these $ n $ functions. 
+
+  That is, a fundamental set of solutions is a basis for the set of all solutions of $ (1) $, and the solution set is an $ n $-dimensional vector space of functions. If a vector $ x_0 $ is specified, then the initial value problem is to construct the unique function $ x $ such that $ x'=Ax ~\&~ x(0)=x_0 $.
+
+  When $ A $ is a diagonal matrix, the solutions of $ (1) $ can be produced by calculus. To exemplify, we consider
+  \[
+    \begin{bmatrix}
+      x'_1(t)\\
+      x'_2(t)
+    \end{bmatrix}=
+    \begin{bmatrix}
+      3 &0\\
+      0 &-5
+    \end{bmatrix}
+    \begin{bmatrix}
+      x_1(t)\\
+      x_2(t)
+    \end{bmatrix} 
+    \qquad (2)
+  \]
+
+  that is,
+  \[
+    \begin{gathered}
+    x'_1(t) = 3x_1(t)\\
+    x'_2(t)=-5x_2(t)
+    \end{gathered}
+    \qquad (3)
+  \]
+
+  The system $ (2) $ is said to  be decoupled because each derivative of a function depends on the function itself, rather than on a combination or coupling of both $ x_1(t) ~\&~ x_2(t) $. 
+
+  From calculus, the solutions of $ (3) $ are $ x_1(t)=c_1e^{3t} ~\&~ x_2(t)=c_2e^{-5t} $, for any constants $ c_1 ~\&~ c_2 $. 
+
+  So each solution of equation $ (2) $ can be written in the form
+  \[
+    \begin{bmatrix}
+      x_1(t)\\
+      x_2(t)
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      c_1e^{3t}\\
+      c_2e^{-5t}
+    \end{bmatrix}=
+    c_1\begin{bmatrix}
+      1\\
+      0
+    \end{bmatrix}e^{3t}
+    +
+    c_2\begin{bmatrix}
+      0\\
+      1
+    \end{bmatrix}e^{-5t}
+  \]
+
+  Which suggests that for the general equations $ x'=Ax $, a solution might be a linear combination of functions of the form
+  \[
+    x(t)=ve^{\lambda t}
+  \]
+
+  for some scalar $ \lambda $ and some fixed nonzero vector $ v $. If $ v=0 $, the function $ x(t) $ is identically zero, satisfying $ x'=Ax $. Observe that
+  \[
+    \begin{gathered}
+    x'(t)=\lambda ve^{\lambda t} \qquad \text{By calculus, since $ v $ is a constant vector}\\
+    Ax(t)=Ave^{\lambda t} \qquad \text{Multiplying both sides by }A
+    \end{gathered}
+  \]
+
+  Since $ e^{\lambda t} $ is never zero, $ x'(t) =Ax(t) $ if and only if $ \lambda v=Av $, that is, if and only if $ \lambda $ is an eigenvalue of $ A $ and $ v $ is a corresponding eigenvector.
+
+  So each eigenvalue-eigenvector pair provides a solution to $ x'=Ax $. Such solutions are sometimes called eigenfunctions of the differential equation. Eigenfunctions are key to solving systems of differential equations.
+\end{document}
