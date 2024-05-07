@@ -1,0 +1,226 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.4 Eigenvectors and Linear Transformations}
+
+\begin{document}
+  \maketitle
+  \textbf{Definition}\\
+  Let $ V $ be a vector space. An eigenvector of a linear transformation $ T:V\to V $ is a nonzero vector in $ V $ suc that $ T(x)=\lambda x $ for some scalar $ \lambda $. A scalar $ \lambda $ is an eigenvalue of $ T $ if there is a nontrivial solution to $ T(x)=\lambda x $. Such an $ x $ is known as an eigenvector corresponding to $ \lambda $.
+
+  \textbf{The Matrix of a Linear Transformation}\\
+  Let $ V $ be an $ n $ dimensional vector space and let $ T $ be any linear trasnformation from $ V $ to $ V $. To associate a matrix with $ T $, choose any basis $ \mathcal{B} $ for $ V $. Given any vector $ x $, the coordinate vector $ \begin{bmatrix}
+    x
+  \end{bmatrix}_\mathcal{B} $ is in $ \mathbb{R}^{n} $, as is the coordinate vector of its image, $ \begin{bmatrix}
+    T(x)
+  \end{bmatrix}_\mathcal{B} $.
+
+  Let $ \{ b_1,...,b_n \} $ be the basis $ \mathcal{B} $ for $ V $. If $ x=r_1b_1+...+r_nb_n $, then
+  \[
+    \begin{bmatrix}
+    x
+  \end{bmatrix}\mathcal{B} =
+  \begin{bmatrix}
+    r_1\\
+    \vdots\\
+    r_n
+  \end{bmatrix}
+  \]
+  
+  And
+  \[
+    T(x)=T(r_1b_1+...+r_nb_n)=r_1T(b_1)+...+r_nT(b_n)
+  \]
+
+  because $ T $ is linear. Since the coordinate mapping from $ B $ to $ \mathbb{R}^{n} $ is linear, we get
+  \[
+    \begin{gathered}
+     T(x)=T(r_1b_1+...+r_nb_n)=r_1T(b_1)+...+r_nT(b_n)\\
+     \begin{bmatrix}
+       T(x)
+     \end{bmatrix}_\mathcal{B}=r_1
+     \begin{bmatrix}
+       T(b_1)
+     \end{bmatrix}_\mathcal{B}+...+
+     r_n\begin{bmatrix}
+       T(b_n)
+     \end{bmatrix}_\mathcal{B}
+    \end{gathered}
+  \]
+  
+  Since $ \mathcal{B} $ coordinate vectors are in $ \mathbb{R}^{n} $, the vector equation can be written as a matrix equation, namely
+  \[
+    \begin{bmatrix}
+      T(x)
+    \end{bmatrix}_\mathcal{B}=M
+    \begin{bmatrix}
+      x
+    \end{bmatrix}_\mathcal{B}
+  \]
+
+  where 
+  \[
+    M=\begin{bmatrix}
+      \begin{bmatrix}
+        T(b_1)
+      \end{bmatrix}_\mathcal{B} &\begin{bmatrix}
+        T(b_2)
+      \end{bmatrix}_\mathcal{B} &... 
+      &\begin{bmatrix}
+        T(b_n)
+      \end{bmatrix}_\mathcal{B}
+    \end{bmatrix}
+  \]
+ 
+  The matrix $ M $ is a matrix representation of $ T $, called the matrix for $ T $ relative to the basis $ \mathcal{B} $ and denoted by $ \begin{bmatrix}
+    T
+  \end{bmatrix}_\mathcal{B} $.
+  
+  \textbf{Ex 1}\\
+  Suppouse $ \mathcal{B}=\{ b_1,b_2 \} $ is a basis for $ V $. Let $ T: V\to V $ be a linear transformation with the property that
+  \[
+    T(b_1)=3b_1-2b_2 \qquad T(b_2)=4b_1+7b_2
+  \]
+
+  Find the matrix $ M $ for $ T $ relative to $ \mathcal{B} $.
+
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      T(b_1)
+    \end{bmatrix}_\mathcal{B}=
+    \begin{bmatrix}
+      3\\
+      -2
+    \end{bmatrix} \qquad 
+    \begin{bmatrix}
+      T(b_2)
+    \end{bmatrix}_\mathcal{B}=
+    \begin{bmatrix}
+      4\\
+      7
+    \end{bmatrix}\\
+    ~\\
+    M=\begin{bmatrix}
+      3 &4\\
+      -2 &7
+    \end{bmatrix}
+    \end{gathered}
+  \]
+
+  \textbf{Ex 2}\\
+  The mapping $ T:\mathbb{P}_2 \to \mathbb{P}_2 $ defined by
+  \[
+    T(a_0+a_1t+a_2t^{2})=a_1+2a_2t
+  \]
+
+  $ T $ can be regonized as the differentiation operator
+
+  a) Find the $ \mathcal{B} $ matrix for $ T $, when $ B $ is the basis $ \{ 1,t,t^{2} \} $ 
+
+  Firstly, compute the images of the basis vectors
+  \[
+    \begin{gathered}
+    T(1)=0\\
+    T(t)=1\\
+    T(t^{2})=2t
+    \end{gathered}
+  \]
+
+  So 
+  \[
+    \begin{bmatrix}
+      T(1)
+    \end{bmatrix}_\mathcal{B}=
+    \begin{bmatrix}
+      0\\
+      0\\
+      0
+    \end{bmatrix} \qquad
+    \begin{bmatrix}
+      T(t)
+    \end{bmatrix}_\mathcal{B}=\begin{bmatrix}
+      1\\
+      0\\
+      0
+    \end{bmatrix} \qquad
+    \begin{bmatrix}
+      T(t^{2})
+    \end{bmatrix}=
+    \begin{bmatrix}
+      0\\
+      0\\
+      0
+    \end{bmatrix}\\
+    ~\\
+    \begin{bmatrix}
+      T
+    \end{bmatrix}_\mathcal{B}=
+    \begin{bmatrix}
+      0 &1 &0\\
+      0 &0 &2\\
+      0 &0 &0
+    \end{bmatrix}
+  \]
+
+  b) Verify that $\begin{bmatrix}
+    T(p)
+  \end{bmatrix}_\mathcal{B} =\begin{bmatrix}
+    T
+  \end{bmatrix}_\mathcal{B}\begin{bmatrix}
+    p
+  \end{bmatrix}_\mathcal{B} $ for each $ p $ in $ \mathbb{P}_2$.
+
+  For a general $ p(t)=a_0+a_1t+a_2t^{} $ 
+  \[
+    \begin{gathered}
+    \begin{bmatrix}
+      T(p)
+    \end{bmatrix}_\mathcal{B}=\begin{bmatrix}
+      a_1+2a_2t
+    \end{bmatrix}_\mathcal{B}=\begin{bmatrix}
+      a_1\\
+      2a_2\\
+      0
+    \end{bmatrix}=
+    \begin{bmatrix}
+      0 &1 &0\\
+      0 &0 &2\\
+      0 &0 &0
+    \end{bmatrix}
+    \begin{bmatrix}
+      a_0\\
+      a_1\\
+      a_2
+    \end{bmatrix}=
+    \begin{bmatrix}
+      T
+    \end{bmatrix}_\mathcal{B}
+    \begin{bmatrix}
+      p
+    \end{bmatrix}_\mathcal{B}
+    \end{gathered}
+  \]
+
+  \textbf{Theorem 5.8 Diaognal Matrix Representation}\\
+  Suppouse $ A=PDP^{-1} $ ,where $ D $ is a diagonal $ n\times n $ matrix. If $ \mathcal{B} $is the basis for $ \mathbb{R}^{n} $ formed from the columns of $ P $, then $ D $  is the $ \mathcal{B} $ matrix for the transformation $ x\mapsto Ax $. 
+
+  \textbf{Ex 4}\\
+  Define $ T:\mathbb{R}^{2}\to \mathbb{R}^{2} $ by $ T(x)=Ax $, where $ A=\begin{bmatrix}
+    7 &2\\
+    -4 &1
+  \end{bmatrix} $. Find a basis $ \mathcal{B} $ for $ \mathbb{R}^{2} $ with the property that the $ \mathcal{B} $ matrix for $ T $ is a diagonal matrix.
+
+  We know that $ A=PDP^{-1} $, where
+  \[
+    P=\begin{bmatrix}
+      1 &1\\
+      -1 &-2
+    \end{bmatrix} \qquad 
+    D=\begin{bmatrix}
+      5 &0\\
+      0 &3
+    \end{bmatrix}
+  \]
+
+  The columns of $ P $ are $ b_1 ~\&~ b_2 $, which are the eigenvectors of $ A $. $ D $ is the $ \mathcal{B} $ matrix for $ T $ when $ \mathcal{B}=\{ b_1,b_2 \} $. 
+\end{document}
