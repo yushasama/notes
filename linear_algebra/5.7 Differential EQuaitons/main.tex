@@ -1,0 +1,168 @@
+\documentclass{article}
+\input{../cfg/preamble}
+\title{5.7 Differential Equations}
+
+\begin{document}
+    \maketitle
+    \textbf{Introduction}\\
+    Given an unknown equation $ y $ 
+
+    Suppouse $ y'=Ay $, can we solve for $ y $?
+
+    \[
+        \begin{gathered}
+        \begin{bmatrix}
+            a &b\\
+            c &d
+        \end{bmatrix}
+        \begin{bmatrix}
+            y_1\\
+            y)2
+        \end{bmatrix}=
+        \begin{bmatrix}
+            y'_1\\
+            y'_2
+        \end{bmatrix}
+        \end{gathered}
+    \]
+
+    \[
+        \begin{gathered}
+        ay_1+by_2=y'_1\\
+        cy_1+dy_2=y'_2
+        \end{gathered}
+    \]
+
+    Consider the differential equation,
+    \[
+        \begin{gathered}
+        Dy=y'\\
+        ~\\
+        \begin{bmatrix}
+            \lambda_1 &0\\
+            0 &\lambda_2
+        \end{bmatrix}
+        \begin{bmatrix}
+            y_1\\
+            y_2
+        \end{bmatrix}=
+        \begin{bmatrix}
+            y'_1\\
+            y'_2
+        \end{bmatrix}
+        \end{gathered}
+    \]
+
+    We can see that
+    \[
+        \begin{gathered}
+        \lambda_1 y_1=y'_1\\
+        \lambda_2 y_2=y'_2
+        \end{gathered}
+    \]
+
+    Now that this is decoupled, we can get
+    \[
+        \begin{gathered}
+            \lambda_1 y_1=y'_1 \to y_1=e^{\lambda_1 x}+C_1\\
+            \lambda_2 y_2=y'_2 \to y_2=e^{\lambda_2 x}+C_2 
+        \end{gathered}
+    \]
+
+    \textbf{Ex 1}\\
+    Solve $ x'=Ax $
+    \[
+        \begin{gathered}
+        \begin{bmatrix}
+            x_1'(t)\\
+            x'_2(t)
+        \end{bmatrix}=
+        \begin{bmatrix}
+            3 &0\\
+            0 &-5
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1(t)\\
+            x_2(t)
+        \end{bmatrix}\\
+        ~\\
+        x_1(t)=e^{3t}+C_1\\
+        x_2(t)=e^{-5t}+C_2  
+        \end{gathered}
+    \]
+
+    \textbf{Ex 2}\\
+    Solve $ x'=Ax $, where $ A=\begin{bmatrix}
+        -1.5 &0.5\\
+        1 &-1
+    \end{bmatrix} $ and $ x(0)=\begin{bmatrix}
+        5\\
+        4
+    \end{bmatrix} $ 
+
+    Firstly, find the eigenvalues of $ A $ and solve $ \text{det}(A-\lambda I) =0$ in order to diagonalize $ A $.
+    \[
+        \begin{gathered}
+        \begin{bmatrix}
+        -1.5 - \lambda &0.5\\
+        1 &-1-\lambda
+        \end{bmatrix}
+        \end{gathered}=0
+    \]
+
+    So
+    \[
+        \begin{gathered}
+          (\lambda + 1.5)(\lambda + 1)-0.5=0\\
+          \lambda^{2} + 2.5\lambda + 1=0\\
+          ~\\
+          \lambda_1 = -0.5 \qquad \lambda_2 = -2 
+        \end{gathered}
+    \]
+
+    Then we solve for the eigenvectors $ v_1 ~\&~ v_2 $
+    \[
+        \begin{gathered}
+        \lambda_1=-0.5
+        \begin{bmatrix}
+            -1 &0.5 &0\\
+            1 &-0.5 &0
+        \end{bmatrix}\\
+        v_1=\begin{bmatrix}
+            1\\
+            2
+        \end{bmatrix}\\
+        ~\\
+        \lambda_2 = -2\\
+        \begin{bmatrix}
+            0.5 &0.5 &0\\
+            1 &1 &0
+        \end{bmatrix}\\
+        v_2=\begin{bmatrix}
+            -1\\
+            1
+        \end{bmatrix}
+        \end{gathered}
+    \]
+
+    The general solution of $ x'=\begin{bmatrix}
+        -1.5 &0.5\\
+        1 &-1
+    \end{bmatrix}x $ is
+    \[
+        \begin{gathered}
+        x(t)=\begin{bmatrix}
+            x_1(t)\\
+            x_2(t)
+        \end{bmatrix}=c_1v_1e^{\lambda_1 t} + c_2v_2 e^{\lambda_2 t}\\
+        c_1 \begin{bmatrix}
+            1\\
+            2
+        \end{bmatrix}e^{-\frac{1}{2}t}+c_2\begin{bmatrix}
+            -1\\
+            1
+        \end{bmatrix} e^{-2t}  
+        \end{gathered}
+    \]
+    
+\end{document}
